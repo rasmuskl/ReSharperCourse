@@ -1,0 +1,12 @@
+syntax: glob
+
+_ReSharper*
+*.suo
+*Publish.xml
+Publish
+*.sln.cache
+
+Source/**/obj
+Source/**/bin
+Source/**.dotCover
+Source/**.user
