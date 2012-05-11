@@ -23,7 +23,7 @@ namespace Basic
         private readonly IEnumerable<Document> _documents;
         private readonly SecurityClassification _securityClassification;
 
-        public Plan(string name, IEnumerable<Document> documents, SecurityClassification securityClassification )
+        public Plan(string name, IEnumerable<Document> documents, SecurityClassification securityClassification)
         {
             _name = name;
             _documents = documents;
