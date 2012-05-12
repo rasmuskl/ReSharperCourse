@@ -27,3 +27,47 @@
 {
     <kbd>@key</kbd>
 }
+
+@helper Shortcut(string modifiers, string key =  "")
+{
+    bool first = true;
+    
+    if(modifiers.IndexOf("A", StringComparison.InvariantCultureIgnoreCase) != -1)
+    {
+        @Alt();
+        first = false;
+    }
+    
+    if(modifiers.IndexOf("C", StringComparison.InvariantCultureIgnoreCase) != -1)
+    {
+        if (!first)
+        {
+            @(" + ")
+        }
+        
+        @Ctrl()
+        first = false;
+    }    
+    
+    if(modifiers.IndexOf("S", StringComparison.InvariantCultureIgnoreCase) != -1)
+    {
+        if (!first)
+        {
+            @(" + ")
+        }
+        
+        @Shift()
+        first = false;
+    }
+    
+    if(!string.IsNullOrWhiteSpace(key))
+    {
+        if(!first)
+        {
+            @(" + ")
+        }
+        
+        @Key(key)
+    }
+    
+}
