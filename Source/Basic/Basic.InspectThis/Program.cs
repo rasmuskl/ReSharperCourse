@@ -1,12 +1,12 @@
-﻿using System.Linq;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Basic.InspectThis
 {
     public class Program
     {
-        static void Main()
+        public static void Main()
         {
             int importantValue = 42;
 
@@ -28,7 +28,7 @@ namespace Basic.InspectThis
 
             return valueList;
         }
-       
+
         private static IEnumerable<int> GetOtherValues()
         {
             return new[] { 1, 3, 5, 7 };

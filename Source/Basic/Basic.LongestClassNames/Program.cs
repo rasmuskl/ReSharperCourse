@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Basic.LongestClassNames
@@ -8,7 +7,7 @@ namespace Basic.LongestClassNames
     {
         public static void Main()
         {
-            var assembly = typeof (string).Assembly;
+            var assembly = typeof(string).Assembly;
 
             var orderedTypes = assembly.GetTypes()
                 .Where(x => x.IsPublic)
