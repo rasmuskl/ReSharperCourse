@@ -1,0 +1,25 @@
+﻿<div class="task">
+    <p>
+        In the Basic solution. Create the 2 following classes:
+    </p>
+    <ul>
+        <li>Plan</li>
+        <li>Document</li>
+    </ul>
+    <p>
+        The Plan class should take a name (string), some documents (@("IEnumerable<Document>"))
+        and a security classification (Basic.Support.SecurityClassification) in it's constructor
+        and expose them as read-only properties.
+    </p>
+    <p>
+        One solution could look like this:</p>
+    <div class="file">
+        Plan.cs
+        @Helpers.RenderFile("~/Code/Basic/Plan.cs")
+    </div>
+    <div class="file">
+        Document.cs
+        @Helpers.RenderFile("~/Code/Basic/Document.cs")
+    </div>
+</div>
+

@@ -1,77 +1,34 @@
-﻿@model dynamic
+﻿<h2>ReSharper Course Tasks</h2>
 
-@{
-    ViewBag.Title = "ReSharper Course Tasks";
-}
+@Html.Partial("FirstTask")
+@Html.Partial("InspectThis")
 
-<h2>ReSharper Course Tasks</h2>
+
 <div class="task">
-
-    <p>In the Basic solution. Create the 2 following classes:</p>
-
-    <ul>
-        <li>Plan</li>
-        <li>Document</li>
-    </ul>
-
-    <p>The Plan class should take a name (string), some documents (IEnumerable&lt;Document&gt;) and a security classification (Basic.Support.SecurityClassification) in it's constructor and expose them as read-only properties.</p>
-
-    <p>One solution could look like this:</p>
-
-    <div class="file">
-        Plan.cs
-        @Helpers.RenderFile("~/Code/Basic/Plan.cs")
-    </div>
-
-    <div class="file">
-        Document.cs
-        @Helpers.RenderFile("~/Code/Basic/Document.cs")
-    </div>
-
-</div>
-<div class="task">
-
-    <p>In the Basic solution - find the Basic.InspectThis project.</p>
-
-    <p><kbd>Alt</kbd>+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd> - Inspect this.</p>
-
-    <p>Remember to dock the inspection window and set up Show Preview on the Right.</p>
-
-    <ul>
-        <li>Explore the value destination of 'importantValue' in the Main() method.</li>
-        <li>Explore the value origin of the 'value' variable in the Main() method.</li>
-    </ul>
-
-</div>
-<div class="task">
-
-    Long names:
-
-    HandleProcessCorruptedStateExceptionsAttribute [46]
-    KeyContainerPermissionAccessEntryCollection [43]
-    KeyContainerPermissionAccessEntryEnumerator [43]
-    CryptographicUnexpectedOperationException [41]
-    ApplicationDirectoryMembershipCondition [39]
-    ManagedToNativeComInteropStubAttribute [38]
-    IsolatedStorageFilePermissionAttribute [38]
-    SuppressUnmanagedCodeSecurityAttribute [38]
-    AppDomainManagerInitializationOptions [37]
-    AssemblyInformationalVersionAttribute [37]
-    CriticalHandleZeroOrMinusOneIsInvalid [37]
-    StrongNameIdentityPermissionAttribute [37]
-    AllowPartiallyTrustedCallersAttribute [37]
-    PublisherIdentityPermissionAttribute [36]
+    Long names: 
+    HandleProcessCorruptedStateExceptionsAttribute [46] 
+    KeyContainerPermissionAccessEntryCollection [43] 
+    KeyContainerPermissionAccessEntryEnumerator [43] 
+    CryptographicUnexpectedOperationException [41] 
+    ApplicationDirectoryMembershipCondition [39] 
+    ManagedToNativeComInteropStubAttribute [38] 
+    IsolatedStorageFilePermissionAttribute [38] 
+    SuppressUnmanagedCodeSecurityAttribute [38] 
+    AppDomainManagerInitializationOptions [37] 
+    AssemblyInformationalVersionAttribute [37] 
+    CriticalHandleZeroOrMinusOneIsInvalid [37] 
+    StrongNameIdentityPermissionAttribute [37] 
+    AllowPartiallyTrustedCallersAttribute [37] 
+    PublisherIdentityPermissionAttribute [36] 
     InsufficientExecutionStackException [35]
-    ContractPublicPropertyNameAttribute [35]
-    SetWin32ContextInIDispatchAttribute [35]
-    ContractReferenceAssemblyAttribute [34]
-    AssemblyTargetedPatchBandAttribute [34]
-    IsolatedStoragePermissionAttribute [34]
-    InternalApplicationIdentityHelper [33]
+    ContractPublicPropertyNameAttribute [35] 
+    SetWin32ContextInIDispatchAttribute [35] 
+    ContractReferenceAssemblyAttribute [34] 
+    AssemblyTargetedPatchBandAttribute [34] 
+    IsolatedStoragePermissionAttribute [34] 
+    InternalApplicationIdentityHelper [33] 
     SafeHandleZeroOrMinusOneIsInvalid [33]
     WaitHandleCannotBeOpenedException [33]
-    MissingSatelliteAssemblyException [33]
+    MissingSatelliteAssemblyException [33] 
     NeutralResourcesLanguageAttribute [33]
-
-
 </div>
