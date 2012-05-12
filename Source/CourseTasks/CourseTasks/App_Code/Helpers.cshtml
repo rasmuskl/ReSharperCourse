@@ -1,5 +1,4 @@
 ﻿
-
 @helper RenderFile(string path) {
     <pre>
     @foreach(var line in File.ReadAllLines(HttpContext.Current.Server.MapPath(path)))

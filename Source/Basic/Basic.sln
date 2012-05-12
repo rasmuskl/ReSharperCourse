@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basic.InspectThis", "Basic.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basic.LongestClassNames", "Basic.LongestClassNames\Basic.LongestClassNames.csproj", "{926007DD-13C0-4B6A-AFAE-655840B4E627}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basic.ScratchPad", "Basic.ScratchPad\Basic.ScratchPad.csproj", "{10A246BE-3767-425A-8EDE-04058C3F6030}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,16 @@ Global
 		{926007DD-13C0-4B6A-AFAE-655840B4E627}.Release|Mixed Platforms.Build.0 = Release|x86
 		{926007DD-13C0-4B6A-AFAE-655840B4E627}.Release|x86.ActiveCfg = Release|x86
 		{926007DD-13C0-4B6A-AFAE-655840B4E627}.Release|x86.Build.0 = Release|x86
+		{10A246BE-3767-425A-8EDE-04058C3F6030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A246BE-3767-425A-8EDE-04058C3F6030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A246BE-3767-425A-8EDE-04058C3F6030}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{10A246BE-3767-425A-8EDE-04058C3F6030}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{10A246BE-3767-425A-8EDE-04058C3F6030}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{10A246BE-3767-425A-8EDE-04058C3F6030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A246BE-3767-425A-8EDE-04058C3F6030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10A246BE-3767-425A-8EDE-04058C3F6030}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{10A246BE-3767-425A-8EDE-04058C3F6030}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{10A246BE-3767-425A-8EDE-04058C3F6030}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
