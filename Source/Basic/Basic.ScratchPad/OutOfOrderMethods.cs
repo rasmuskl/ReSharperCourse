@@ -10,12 +10,35 @@ namespace Basic.ScratchPad
         {
         }
 
-        public void E()
+        public void C()
         {
         }
 
-        public void C()
+        public void E(int theNumber, string[] data)
         {
+            int theOtherNumber = theNumber * 13;
+
+            if (theNumber == 42)
+            {
+                try
+                {
+                    if (data != null)
+                    {
+                        Console.WriteLine("Processing data");
+                    }
+                }
+                catch
+                {
+                    Console.WriteLine("Failed.");
+                    throw;
+                }
+
+                Console.WriteLine("It's 42!");
+            }
+            else
+            {
+                Console.WriteLine("Mult is {0}.", theOtherNumber);
+            }
         }
 
         public void B()
