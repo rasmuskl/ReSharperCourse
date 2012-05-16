@@ -1,14 +1,14 @@
 ﻿<div class="task">
     <p>
-        In the Basic solution. Create the 2 following classes:
+        In the @Code.Sln("Basic") solution. Create the 2 following classes:
     </p>
     <ul>
-        <li>Plan</li>
-        <li>Document</li>
+        <li>@Code.Ref("Plan")</li>
+        <li>@Code.Ref("Document")</li>
     </ul>
     <p>
-        The Plan class should take a name (string), some documents (@("IEnumerable<Document>"))
-        and a security classification (Basic.Support.SecurityClassification) in it's constructor
+        The @Code.Ref("Plan") class should take a name (@Code.Ref("string")), some documents (@Code.Ref("IEnumerable<Document>"))
+        and a security classification (@Code.Ref("Basic.Support.SecurityClassification")) in it's constructor
         and expose them as read-only properties.
     </p>
     <p>

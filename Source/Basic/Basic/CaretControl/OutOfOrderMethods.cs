@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System;
 
-namespace Basic.ScratchPad
+namespace Basic.CaretControl
 {
     public class OutOfOrderMethods
     {
@@ -16,13 +14,13 @@ namespace Basic.ScratchPad
 
         public void E(int theNumber, string[] data)
         {
-            int theOtherNumber = theNumber * 13;
-
-            if (theNumber == 42)
+            int theOtherNumber = 13 * theNumber;
+            
+            if (42 == theNumber)
             {
                 try
                 {
-                    if (data != null)
+                    if (null != data)
                     {
                         Console.WriteLine("Processing data");
                     }
@@ -30,14 +28,13 @@ namespace Basic.ScratchPad
                 catch
                 {
                     Console.WriteLine("Failed.");
-                    throw;
                 }
 
-                Console.WriteLine("It's 42!");
+                Console.WriteLine("Mult is {0}.", theOtherNumber);
             }
             else
             {
-                Console.WriteLine("Mult is {0}.", theOtherNumber);
+                Console.WriteLine("It's not 42!");
             }
         }
 

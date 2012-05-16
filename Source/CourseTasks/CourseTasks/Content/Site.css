@@ -23,3 +23,12 @@ pre {
     background-color: #eee;
     padding: 1em 0 0 1em;
 }
+
+span.inline-code {
+    background-color: #eee;
+    padding: 0;
+    display: inline;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0px;
+}

@@ -94,7 +94,10 @@
     <Content Include="App_Code\Keys.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\ReorderMethods.cshtml" />
+    <None Include="Views\Home\CaretControl.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\Code.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
