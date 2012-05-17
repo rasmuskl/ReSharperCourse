@@ -32,3 +32,12 @@ span.inline-code {
     white-space: pre;
     margin: 1em 0px;
 }
+
+.primary-shortcuts table, .primary-shortcuts td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+.primary-shortcuts td {
+    padding: 5px 10px;
+}

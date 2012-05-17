@@ -1,0 +1,47 @@
+﻿
+@helper FocusSolutionExplorer()
+{
+    @Scaffold("Focus Solution Explorer", "AC", "L")
+}
+
+@helper LocateInSolutionExplorer()
+{
+    @Scaffold("Locate in Solution Explorer", "AS", "L")
+}
+
+@helper ContextMenu()
+{
+    @Scaffold("Open context menu", "S", "F10")
+}
+
+@helper FocusCodeWindow()
+{
+    @Scaffold("Focus Code Window", "", "ESC")
+}
+
+@helper FocusCodeWindow2()
+{
+    @Scaffold("Focus Code Window (more stable)", "A", "W, 1")
+}
+
+@helper OpenMenuBar()
+{
+    @Scaffold("Open menu underlined with <X>", "A", "<X>")
+}
+
+
+@helper Scaffold(string description, string modifiers, string key)
+{
+    <tr>
+        <td>
+            @description
+        </td>
+        <td>
+            @Keys.Shortcut(modifiers, key)
+        </td>
+    </tr>
+}
+
+
+
+

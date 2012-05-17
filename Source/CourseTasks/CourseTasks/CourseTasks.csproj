@@ -94,6 +94,7 @@
     <Content Include="App_Code\Keys.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\Shortcuts.cshtml" />
     <None Include="Views\Home\CaretControl.cshtml" />
   </ItemGroup>
   <ItemGroup>
