@@ -1,0 +1,67 @@
+﻿@using BlogEngine.Core.Packaging
+
+@{
+    Page.Title = Resources.labels.themes;
+    Layout = "~/admin/_Layout.cshtml";
+
+    var loaderSrc = Path.Combine(BlogEngine.Core.Utils.ApplicationRelativeWebRoot, "pics/ajax-loader.gif");
+
+    // disallow gallery page in child blogs.
+    var canManagePackages = BlogEngine.Core.Blog.CurrentInstance.IsPrimary;
+    
+    if (!canManagePackages)
+    {   
+        Response.Redirect("default.cshtml");
+        return;
+    }
+}
+
+ <script type="text/javascript">
+     $(document).ready(function () {
+         $('.loader2').hide();
+         $('.page-loader').hide();
+         GalleryGetPackages(0, 'Extension');
+     });
+</script>
+
+<div class="content-box-outer">
+    <div class="content-box-full">
+        <div class="TabRow">
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab AlternatePageTabSelected" title="Tasks">@Resources.labels.extensions</span>
+            </div>
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab" title="News" onclick="location.href='Themes.cshtml'">@Resources.labels.themes</span>
+            </div>
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab" title="News" onclick="location.href='Widgets.cshtml'">@Resources.labels.widgets</span>
+            </div>
+            <div class="TabRight">
+                <a href="default.cshtml">@Resources.labels.installed</a> 
+                | <span>@Resources.labels.gallery</span>
+            </div>
+        </div>
+        
+        <div>
+            <div class="gallery-options">
+                <div id="gallery-search">
+                    <input type="text" value="" id="searchGallery" />
+                    <input type="submit" id="btnGalSearch" class="btn primary" onclick="GalleryGetPackages(0,'Extension'); return false;" value="@Resources.labels.search" />
+                </div>
+                <span>@Resources.labels.orderBy: </span>
+                <select id="gallery-sort-order" onchange="GalleryGetPackages(0,'Extension')">
+                    <option value="Alphanumeric">@Resources.labels.alphaNumeric</option>
+                    <option value="Downloads">@Resources.labels.downloads</option>
+                    <option value="Newest" selected="selected">@Resources.labels.newest</option>
+                </select>
+                <img class="page-loader" src="@loaderSrc" alt="loader" />
+            </div>
+            <div id="Container"></div>
+            <div id="Pager"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

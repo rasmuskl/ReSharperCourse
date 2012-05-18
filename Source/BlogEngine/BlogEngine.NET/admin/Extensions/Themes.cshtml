@@ -1,0 +1,96 @@
+﻿@using BlogEngine.Core.Packaging
+
+@{
+    Page.Title = Resources.labels.themes;
+    Layout = "~/admin/_Layout.cshtml";
+
+    var loaderSrc = Path.Combine(BlogEngine.Core.Utils.ApplicationRelativeWebRoot, "pics/ajax-loader.gif");
+
+    // disallow gallery page in child blogs.
+    var canManageThemes = BlogEngine.Core.Blog.CurrentInstance.IsPrimary;
+    
+    var tab = "1";
+    if(!string.IsNullOrEmpty(Request.QueryString["t"])){
+        tab = Request.QueryString["t"];   
+    }
+    if (tab == "2" && !canManageThemes)
+    {   
+        Response.Redirect("Themes.cshtml");
+        return;
+    }
+
+    var page = 1;
+    if(!string.IsNullOrEmpty(Request.QueryString["p"])){
+        page = int.Parse(Request.QueryString["p"]);
+    }
+}
+
+ <script type="text/javascript">
+     $(document).ready(function () {
+         $('.loader2').hide();
+         $('.page-loader').hide();
+         if (Querystring('t') == '2') {
+             GalleryGetPackages(0, 'Theme');
+         }
+     });
+</script>
+
+<div class="content-box-outer">
+    <div class="content-box-full">
+        
+        <div class="TabRow">
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab" onclick="location.href='default.cshtml'">Extensions</span>
+            </div>
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab AlternatePageTabSelected">@Resources.labels.themes</span>
+            </div>
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab" onclick="location.href='Widgets.cshtml'">Widgets</span>
+            </div>
+            <div class="TabRight">
+                @if (tab == "1"){
+                    @Resources.labels.installed
+                    if (canManageThemes)
+                    {
+                        <span>|</span> <a href="Themes.cshtml?t=2">@Resources.labels.gallery</a>
+                    }
+                }
+                else
+                {
+                    <a href="Themes.cshtml">@Resources.labels.installed</a>
+                     <span>|</span> @Resources.labels.gallery
+                }
+            </div>
+        </div>
+
+        <div>
+            @if (tab == "1")
+            {
+                @Helpers.AdminHelper.InstalledThemes()
+            }
+            else
+            {
+            <div class="gallery-options">
+                <div id="gallery-search">
+                    <input type="text" value="" id="searchGallery" />
+                    <input type="submit" id="btnGalSearch" class="btn primary" onclick="GalleryGetPackages(0, 'Theme'); return false;" value="@Resources.labels.search" />
+                </div>
+                <span>@Resources.labels.orderBy: </span>
+                <select id="gallery-sort-order" onchange="GalleryGetPackages(0, 'Theme')">
+                    <option value="Alphanumeric">@Resources.labels.alphaNumeric</option>
+                    <option value="Downloads">@Resources.labels.downloads</option>
+                    <option value="Newest" selected="selected">@Resources.labels.newest</option>
+                </select>
+                <img class="page-loader" src="@loaderSrc" alt="loader" />
+            </div>
+            <div id="Container"></div>
+            <div id="Pager"></div>
+            }
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

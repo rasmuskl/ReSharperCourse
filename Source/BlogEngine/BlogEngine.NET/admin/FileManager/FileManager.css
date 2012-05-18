@@ -1,0 +1,110 @@
+﻿.fmD   
+{
+    height:290px;
+    background: #efefef;
+    position:relative; 
+    width:100%;
+    z-index:150;
+    border-bottom-left-radius: 10px 10px; 
+    border-bottom-right-radius: 10px 10px; 
+    color:#000;
+    padding:0px;
+    font-weight:normal;
+}
+.fmDWrap { padding:10px;height:270px; }
+.fmD h1 { font-size:18px; margin:10px 0 10px 10px; border:0; text-decoration:none; }
+.fmD a, .fmD:visited, .fmD:active { color:#000; text-decoration:none; }
+.fmD a img { border:0;padding:0 25px 0 0; }
+.fmD img { vertical-align:middle; border:0; }
+.fmD-left { float:left; width:270px;background:#dedede; }
+.fmD-left ul { list-style-type:none; }
+.fmD-left ul li { padding:5px 0px 5px 10px;border-top-left-radius:7px 7px; border-bottom-left-radius:7px 7px;margin:6px 0px; }
+.fmD-left ul li:hover { background:#fff; }
+.fmD-left ul li.fmDActive { background:#fff; }
+.fmD-left ul li a { width:100%; height:32px; display:block; }
+.fmD-right { width:745px; float:left; min-height:260px; border-top-right-radius: 7px 7px; border-bottom-left-radius:7px 7px; background:#fff; }
+.fmD-right-content { color:#000; font-size: 11px; font-family:'Trebuchet MS', Arial, Serif; height:100%; display:none; padding:15px; }
+.fmD-right-close { padding-top: 126px; font-size:14px; }
+
+.fmD-upload { padding:15px; }
+.fmD-upload h2 { font-size:16px; border:0; margin:5px; text-decoration:none; }
+.fmD-upload-left { float:left; width: 65px; height:65px; background:url('images/fileUpload.png') no-repeat 0 0 transparent; }
+.fmD-upload-right { float:left; width:280px;height:65px; overflow:hidden; margin-left:30px; }
+.fmD-upload-right p { padding:0; margin:0; }
+.fmD-upload-ctrl { padding-top:25px; }
+
+.fmD-upload-right-wait strong { font-weight:bold; }
+.fmD-upload-right-uploading { display:none; }
+#fmD-UploadProgress { width: 260px; }
+.fmD-upload-options { margin-left:60px; }
+
+
+.ui-progressbar-value { background-image: url('images/pbar-ani.gif')!important; }
+
+
+
+th.fmDCell { text-align:left; }
+td.fmDCell { cursor:pointer;border-bottom:1px solid gainsboro;height:20px;min-height:20px;padding:3px; }
+tr.fmDRow:hover td { background:url('images/tr-hover.png') repeat-x 0 0 transparent; }
+
+.fmDRename { border-radius:0!important; -moz-border-radius:0!important;-webkit-border-radius:0!important;-khtml-border-radius:0!important; padding:1px 2px 1px 3px!important;font-size:11px!important; }
+img.fmDImgPrev { border:solid 1px #ccc; }
+
+a.fmDPreview-tools { border:solid 1px #ccc; padding:5px 10px 5px 25px; background-color:transparent; background-position:4px center; background-repeat:no-repeat; display:inline-block; margin:10px 10px;color:#1b6cb3; }
+a.fmDPreview-tools:hover,a.fmDPreview-tools-active { border:solid 1px #6a94dc; background-color:#cde3f6;color:#002f58;}
+a.rotate-left { background-image:url('images/shape_rotate_anticlockwise.png'); }
+a.rotate-right { background-image:url('images/shape_rotate_clockwise.png'); }
+a.flip-horizontal { background-image:url('images/shape_flip_horizontal.png'); }
+a.flip-vertical { background-image:url('images/shape_flip_vertical.png'); }
+a.crop-image { background-image:url('images/ruler_crop.png'); }
+a.crop-cancel { background-image:url('images/cancel.png'); }
+a.crop-submit { background-image:url('images/action-enable.png'); }
+a.image-resize { background-image:url('images/icon_resize.gif'); }
+.resize-manager { display:none; }
+.resize-manager .resize-text { font-size:10px;font-style:italic;color:#999;font-weight:normal; }
+.fmdPreview-ImageSlider.ui-progressbar-value { background-image:none!important; }
+.ImagePanel { margin: 5px 0px; }
+
+
+/* jeegoo context */
+body ul.cm_default, body ul.cm_default ul
+{
+	/* Required settings */
+	top:-1000px; left:-1000px; position:absolute; z-index:999; 
+	/* Possibly inherited values overrides */
+	border-width:0;  float:none; height:auto; margin:0; padding:0; width:auto;	
+	/* Additional settings */
+	border-top:solid 1px #acacac; border-bottom:solid 1px #acacac;
+}
+body ul.cm_default li
+{
+	/* Required settings */
+	width:162px; list-style:none none outside;
+	/* Possibly inherited values overrides */
+	float:none; height:auto; letter-spacing:normal; margin:0; border-width:0; line-height:normal; margin:0; 
+	text-align:left; text-decoration:none; text-indent:0; text-transform:none; vertical-align:top; word-spacing:normal;
+	font-family:Arial, Sans-Serif; font-size:13px; font-style:normal; font-variant:normal; font-weight:normal;
+	/* Additional settings */
+	overflow:hidden; cursor:default; padding:5px 5px 5px 31px; 
+	border-left:solid 1px #acacac; border-right:solid 1px #acacac; 
+	background:#e6e6e6 url(images/background.gif) repeat-y 0 0
+}
+body ul.cm_default li.separator{width:198px; height:12px; background:#e6e6e6 url(images/separator.gif) no-repeat; padding:0}
+/* IE 6/7 hack */
+body ul.cm_default li.separator{*margin:-1px 0 -5px 0}
+body ul.cm_default li.disabled{color:#999}
+body ul.cm_default li span.submenu{display:block; width:4px; height:11px; float:right; background:url(images/submenu.gif) no-repeat 0 4px}
+body ul.cm_default li.disabled span.submenu{background-image:url(images/submenu_dis.gif)}
+body ul.cm_default li.hover{background-color:#d4dde6; background-image:url(images/hover.gif)}
+/* no hover effects on separators*/
+body ul.cm_default li.hover.separator{background-color:#e6e6e6; background-image:url(images/separator.gif)}
+/*icons*/
+body ul.cm_default li.icon{width:188px; padding:5px; cursor:pointer;}
+body ul.cm_default span.icon{display:block; float:left; width:26px; height:16px; background-repeat:no-repeat}
+body ul.cm_default span.icon.hover{background-position:0 -16px}
+
+body ul.cm_default span.add{background-image:url(images/add.png); }
+body ul.cm_default span.viewer{background-image:url(images/view.png); }
+body ul.cm_default span.rename{background-image:url(images/rename.png); }
+body ul.cm_default span.page-prop{background-image:url(images/page-prop.png); }
+body ul.cm_default span.page-delete{background-image:url(images/page-delete.png); }

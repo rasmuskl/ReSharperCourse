@@ -1,0 +1,33 @@
+﻿<td>&nbsp;</td>
+<td>{$T.d.Avatar}</td>
+<td colspan="6">
+        <div id="EditCommentLeftBox" style="width: 220px; float:left; margin-right:20px;"> 
+            <ul class="fl">
+                <li> 
+                    <label for="txtAuthor" class="lbl">{BlogAdmin.i18n.author}</label>
+		            <input type="text" id="txtAuthor" name="txtAuthor" class="txt200" value="{$T.d.Author}" />
+                </li>
+                <li> 
+                    <label for="txtEmail" class="lbl">{BlogAdmin.i18n.email}</label>
+		            <input type="text" id="txtEmail" class="txt200 required" value="{$T.d.Email}" />
+		        </li>
+                <li> 
+                    <label for="txtWebsite" class="lbl">{BlogAdmin.i18n.website}</label>
+		            <input type="text" id="txtWebsite" class="txt200" value="{$T.d.Website}" />   
+                </li>
+            </ul>
+        </div>
+        <div style="width: auto; float:left;">
+            <ul class="fl">
+                <li>
+                    <label for="txtComment" class="lbl">{BlogAdmin.i18n.comment}</label>
+                    <textarea name="txtComment" id="txtComment" class="txt" rows="6" cols="58" style="height: 150px;">{$T.d.Content}</textarea>
+                </li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+        <div style="margin:0 0 10px;">
+            <input type="submit" class="btn primary" id="btnSave" onclick="return SaveComment(this);" value="{BlogAdmin.i18n.save}" /> {BlogAdmin.i18n.or} 
+	        <a href="#" onclick="CancelEditComment(this);">{BlogAdmin.i18n.cancel}</a>
+        </div>
+</td>

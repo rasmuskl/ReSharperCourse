@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="IndigoSite" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server" profile="http://gmpg.org/xfn/11">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon"/>
+</head>
+
+<body>
+    <div class="container">
+	    <div class="header">
+	        <div class="title">
+	            <h1><a href="<%= Utils.RelativeWebRoot %>"><%=BlogSettings.Instance.Name %></a></h1>
+	            <%=BlogSettings.Instance.Description %>
+            </div>
+        </div>
+        
+        <div class="main">
+		    <form id="Form1" runat="server">
+		    <div class="content">
+		    
+                <blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+                <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+            </div>
+            <div class="sidenav">
+            <blog:WidgetZone runat="server" ZoneName="be_WIDGET_ZONE" />
+            <%--
+                <h1>Search</h1>
+                <blog:SearchBox runat="server" />
+                
+                 <% if (Security.IsAuthenticated){ %>
+                <h1>Administration</h1>
+                <uc1:menu ID="Menu1" runat="server" />
+                <%} %>
+                
+                <h1>Calendar</h1>
+                <blog:PostCalendar ID="PostCalendar1" runat="Server" NextMonthText=">>" DayNameFormat="FirstTwoLetters" FirstDayOfWeek="sunday" PrevMonthText="<<" CssClass="calendar" BorderWidth="0" WeekendDayStyle-CssClass="weekend" OtherMonthDayStyle-CssClass="other" UseAccessibleHeader="true" EnableViewState="false" />              
+                
+                <h1>Archive</h1>
+                <blog:MonthList ID="MonthList1" runat="server" />
+                                
+                <h1>Tags</h1>
+                <blog:TagCloud ID="TagCloud1" runat="server" />
+
+                <h1>Categories</h1>
+                <blog:CategoryList ID="CategoryList1" ShowRssIcon="false" runat="Server" /><br />
+                
+                <h1>Blogroll</h1>
+                <blog:Blogroll runat="server" />
+                
+                <h1>Disclaimer</h1>
+                <p>The opinions expressed herein are my own personal opinions and do not represent my employer's view in anyway.</p>
+                <p>&copy; Copyright <%=DateTime.Now.Year %></p>--%>
+      <% if (Utils.IsMobile)
+         { %>
+       <p><blog:MobileThemeSwitch ID="MobileThemeSwitch1" runat="server" /></p>
+      <%
+         }
+      %>
+                <p><asp:HyperLink ID="hypLoginStatus" runat="server"></asp:HyperLink></p>
+              
+            </div>
+            <div class="clearer"><span></span></div>
+            </form>
+        </div>
+    </div>       
+    <div class="footer">
+        Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %> | 
+        Original Design by <a href="http://arcsin.se">Arcsin</a>, Adapted by <a href="http://www.nyveldt.com/blog/">RazorAnt</a>
+    </div>
+    
+</body>
+</html>

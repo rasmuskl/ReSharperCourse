@@ -1,0 +1,331 @@
+﻿body   
+{
+    background: #DEDEDE url(../pics/bg-slice.jpg) repeat-x left top; /* #b6b7bc;*/
+    font-size: .80em;
+    font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+    height: 100%;
+}
+
+a:link, a:visited
+{
+    color: #C65D30;
+}
+
+a:hover
+{
+    color: #C65D30;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #C65D30;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+    width: 455px;
+    margin: 20px auto 0px auto;
+}
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 0 0 10px 0;
+    height: 50px;
+    display: block;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.main
+{
+    padding: 10px 25px;
+    margin: 12px 8px 8px 8px;
+    /*min-height: 350px;*/
+    background: #FFFFFF url(../pics/bx-slice.jpg) repeat-x left top;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #CCC;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #4e5766;
+    background: #DEDEDE;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+.login
+{
+    margin: 1em 0px;
+    padding: 0px;
+}
+
+.login p 
+{
+    margin: 2px 12px 0 0;
+}
+
+.field {
+    margin: 10px 0;
+}
+
+input.textEntry, input.passwordEntry
+{
+    background-color: #fff;
+    width: 350px;
+    border: 0px solid #fff;
+    background: #fff;
+}
+
+input.textEntry:focus, input.passwordEntry:focus
+{
+    background-color: #fff;
+    border: 0px solid #fff;
+    background: #fff;
+    outline: none;
+}
+
+
+
+div.accountInfo
+{
+    width: 400px;
+    display:block;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+    padding-left: 10px;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    width: 200px;
+    height: 20px;
+    float:right;
+    text-align: right;
+    margin: 30px 10px 0 0;
+    color: #666;
+    text-decoration: none;
+}
+
+.loginDisplay a:link
+{
+    color: #333;
+    text-decoration: none;
+}
+
+.loginDisplay a:visited
+{
+    color: #333;
+}
+
+.loginDisplay a:hover
+{
+    color: #333;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    padding: 5px 0;
+}
+
+.submitButton input
+{
+    border: 1px solid #ccc;
+    padding: 5px 20px;
+    color: #898989;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 10px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+}
+
+.submitButton span 
+{
+    padding-left: 10px;
+}
+
+#LoginRegister
+{
+    border-top: 1px solid #ccc;
+    margin-top: 15px;
+    padding: 10px 0;
+}
+
+.boxRound {
+    background-color: #fff;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    padding: 5px;
+    margin-top: 5px;
+    width: 360px;
+}
+
+#CreateHdr
+{
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+#StatusBox {
+    display: block;
+    /*height: 35px;*/
+    padding: 0;
+    margin: 0;
+}
+
+.success, .warning, .validation {
+    margin: 0; /* 5px 20px;*/
+    padding:10px 5px 10px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #CCC;
+    display: block;
+}
+
+.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image: url('../pics/success.png');
+}
+
+.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('../pics/warning.png');
+}
+
+.success a, .warning a {
+    text-decoration: none;
+    float: right;
+}

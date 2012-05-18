@@ -1,0 +1,225 @@
+﻿@using BlogEngine.Core
+@using BlogEngine.Core.Web.Extensions
+
+@helper GetExtensions(bool isenabled)
+{
+    var extensions = ExtensionManager.Extensions.Where(x => x.Key != "MetaExtension").ToList();
+    var tableId = "tblEnabledExtensions";
+    var onClick = "$(this).text($(this).text() == 'Show' ? 'Hide' : 'Show'); $.cookie('ToggleDisabledExtensions', $(this).text(), { expires: 30 }); return Toggle('tblDisabledExtensions');";
+    var disabledDisplay = "";
+    
+    extensions.Sort(
+        (e1, e2) => e1.Value.Priority == e2.Value.Priority ? string.CompareOrdinal(e1.Key, e2.Key) : e1.Value.Priority.CompareTo(e2.Value.Priority));
+
+    List<ManagedExtension> manExtensions = new List<ManagedExtension>();
+
+    foreach (KeyValuePair<string, ManagedExtension> ext in extensions)
+    {
+        var oExt = ExtensionManager.GetExtension(@ext.Key);
+        
+        if (oExt.Enabled == isenabled)
+        {
+            manExtensions.Add(oExt);
+        }
+    }
+
+    if(!isenabled)
+    {
+        @* show/hide disabled extensions *@
+        var ShowHide = "Hide";
+        if (Request.Cookies["ToggleDisabledExtensions"] == null)
+        {
+            var cookie = new HttpCookie("ToggleDisabledExtensions", "Hide") { Expires = DateTime.Now.AddMonths(1) };
+            Response.Cookies.Add(cookie);
+        }
+        else
+        {
+            ShowHide = Request.Cookies["ToggleDisabledExtensions"].Value;
+
+            if (ShowHide == "Show")
+            {
+                disabledDisplay = "display: none";
+            }
+        }
+        onClick = onClick.Replace("[x]", "{ expires: 30 }");
+        tableId = "tblDisabledExtensions";
+        <h2 style="margin-top:20px">Disabled Extensions (@manExtensions.Count) <a href="#" id="DisabledToggle" onclick="@Html.Raw(@onClick)" class="toggle">@ShowHide</a></h2>
+    }
+    else{
+        <h2 class="gallery-hdr">@Resources.labels.extensions (@manExtensions.Count)</h2>
+    }
+    
+        
+    <table id="@tableId" class="beTable rounded" style="@disabledDisplay">
+        <thead>
+        <tr>
+            <th width="150">Name</th>
+            <th width="60">Version</th>
+	        <th width="auto">Description</th>
+            <th width="150">Author</th>
+            <th width="60">Priority</th>
+            <th width="80">&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        @{
+            var cnt = 0;
+            var cls = "";
+            var id = "";
+            foreach (var x in manExtensions)
+            {
+                cnt++;
+                cls = (cnt % 2 == 0) ? "alt" : "";
+                id = "ext_" + x.Name;
+                var enabled = @x.Enabled ? @Resources.labels.disable : @Resources.labels.enable;
+                var statusLink = Utils.RelativeWebRoot + "admin/Extensions/SetStatus.cshtml?ext={0}&act={1}";
+                statusLink = string.Format(statusLink, x.Name, !x.Enabled);
+                var actClass = isenabled ? "unapproveAction" : "approveAction";
+                var pkg = BlogEngine.Core.Packaging.PackageRepository.GetPackage(x.Name);
+                        
+                <tr id="@id" class="@cls">
+                    <td>@x.Name</td>
+                    <td>@x.Version</td>
+                    <td>@Html.Raw(x.Description)</td>
+                    <td>@Html.Raw(x.Author)</td>
+                    <td>@x.Priority</td>
+                    <td>
+                    <ul class="rowTools">
+                        <li>
+                            <a class="toolsAction" href="#"><span class="">Tools</span></a>
+                            <ul class="rowToolsMenu">
+                                <li><a href="@statusLink" class="@actClass">@enabled</a></li>
+                                <li><a href="#" onclick="$('#txtPriority').val('@x.Priority'); $('#hdnExtensionName').val('@x.Name');" class="changePriority rightsAction">@Resources.labels.priority</a></li>
+                                <li><a href="@Href(Utils.RelativeWebRoot + "admin/Extensions/Editor.cshtml?id=")@x.Name" class="viewButton viewAction">View</a></li>
+                                @if(pkg != null && pkg.Location == "I"){
+                                <li><a href="#" id="a-@x.Name" onclick="UninstallExtension('@x.Name'); return false;" class="deleteAction">@Resources.labels.delete</a></li> 
+                                }
+                            </ul>
+                        </li>
+                    </ul>
+                    </td>
+                </tr>
+            }      
+        }         
+        </tbody>
+    </table>
+}
+
+@helper GetBlogExtensions(bool isenabled)
+    {
+    var extensions = ExtensionManager.Extensions.Where(x => x.Key != "MetaExtension").ToList();
+    var tableId = "tblEnabledExtensions";
+    var onClick = "$(this).text($(this).text() == 'Show' ? 'Hide' : 'Show'); $.cookie('ToggleDisabledExtensions', $(this).text(), { expires: 30 }); return Toggle('tblDisabledExtensions');";
+    var disabledDisplay = "";
+
+    extensions.Sort(
+        (e1, e2) => e1.Value.Priority == e2.Value.Priority ? string.CompareOrdinal(e1.Key, e2.Key) : e1.Value.Priority.CompareTo(e2.Value.Priority));
+
+    List<ManagedExtension> manExtensions = new List<ManagedExtension>();
+
+    foreach (KeyValuePair<string, ManagedExtension> ext in extensions)
+    {
+        var oExt = ExtensionManager.GetExtension(@ext.Key);
+        if (oExt.Enabled)
+        {
+            if (oExt.Blogs != null && oExt.Blogs.Contains(Blog.CurrentInstance.Id))
+            {
+                if (!isenabled)
+                {
+                    manExtensions.Add(oExt);
+                }
+            }
+            else
+            {
+                if (isenabled)
+                {
+                    manExtensions.Add(oExt);
+                }
+            }
+        }
+    }
+
+    if (isenabled)
+    {
+        <h2 class="gallery-hdr">@Resources.labels.extensions (@manExtensions.Count)</h2>
+    }
+    else
+    {
+        if (manExtensions.Count > 0)
+        {
+            @* show/hide disabled extensions *@
+            var ShowHide = "Hide";
+            if (Request.Cookies["ToggleDisabledExtensions"] == null)
+            {
+                var cookie = new HttpCookie("ToggleDisabledExtensions", "Hide") { Expires = DateTime.Now.AddMonths(1) };
+                Response.Cookies.Add(cookie);
+            }
+            else
+            {
+                ShowHide = Request.Cookies["ToggleDisabledExtensions"].Value;
+
+                if (ShowHide == "Show")
+                {
+                    disabledDisplay = "display: none";
+                }
+            }
+            onClick = onClick.Replace("[x]", "{ expires: 30 }");
+            tableId = "tblDisabledExtensions";
+            <h2 style="margin-top:20px">Disabled Extensions (@manExtensions.Count) <a href="#" id="DisabledToggle" onclick="@Html.Raw(@onClick)" class="toggle">@ShowHide</a></h2>
+        }
+    }
+
+    if (manExtensions.Count > 0)
+    {  
+    <table id="@tableId" class="beTable rounded" style="@disabledDisplay">
+        <thead>
+        <tr>
+            <th width="150">Name</th>
+            <th width="60">Version</th>
+	        <th width="auto">Description</th>
+            <th width="150">Author</th>
+            <th width="80">&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        @{
+        var cnt = 0;
+        var cls = "";
+        foreach (var x in manExtensions)
+        {
+            cnt++;
+            cls = (cnt % 2 == 0) ? "alt" : "";
+            var enabled = @x.Enabled ? @Resources.labels.disable : @Resources.labels.enable;
+            var statusLink = Utils.RelativeWebRoot + "admin/Extensions/SetStatusForBlog.cshtml?ext={0}&act={1}";
+            statusLink = string.Format(statusLink, x.Name, !isenabled);
+            var actClass = isenabled ? "unapproveAction" : "approveAction";
+                        
+                <tr class="@cls">
+                    <td>@x.Name</td>
+                    <td>@x.Version</td>
+                    <td>@Html.Raw(x.Description)</td>
+                    <td>@Html.Raw(x.Author)</td>
+                    <td>
+                    <ul class="rowTools">
+                        <li>
+                            <a class="toolsAction" href="#"><span class="">Tools</span></a>
+                            <ul class="rowToolsMenu">
+                            @if (isenabled)
+                            {
+                                <li><a href="@statusLink" class="@actClass">@Resources.labels.disable</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="@statusLink" class="@actClass">@Resources.labels.enable</a></li>
+                            }
+                            </ul>
+                        </li>
+                    </ul>
+                    </td>
+                </tr>
+        }      
+        }         
+        </tbody>
+    </table>
+    }
+}

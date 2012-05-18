@@ -1,0 +1,20 @@
+﻿<div class="q-main">
+    <div id="q-nav">
+        <div><a href="" id="q-anote" onclick="GetNote(''); return false;"><img src="{BlogEngineRes.webRoot}Modules/QuickNotes/Images/note-50.png" /></a></div>
+        <div class="sel"><img id="q-alist" src="{BlogEngineRes.webRoot}Modules/QuickNotes/Images/folder.png" /></div>
+        <div><a href="" id="q-asettings" onclick="GetSettings(); return false;"><img src="{BlogEngineRes.webRoot}Modules/QuickNotes/Images/tool-50.png" /></a></div>
+    </div>
+	<div class="q-left">
+        {#if $T.d.length == 0}
+        <div class="q-info">
+            You do not have any notes yet.
+        </div>
+        {#else}
+        <select onchange="GetNote(this.options[this.selectedIndex].value)" id="q-listbox" class="rounded" multiple="multiple" size="2">
+        {#foreach $T.d as note}
+		<option class="q-opt" value="{$T.note.Id}">{$T.note.Note}</option>
+        {#/for}
+        </select>
+        {#/if}
+	</div>
+</div>

@@ -1,0 +1,19 @@
+All text is replaced with respective resource strings.
+
+
+Pages
+	Browse -> Browse button is part of file upload and its text managed by browser.
+
+TODO: resources
+
+Blogroll
+	XFN tags
+TinyMCE
+	create CULTURE.js translated as per en.js file located at /editors/tiny_mce_3_4_3_1/langs
+
+Verify all javascripts across the application and change english hardcoded message with resource strings
+
+
+Notes updated by: Pravesh Soni
+pjsoni@gmail.com
+2010-07-10

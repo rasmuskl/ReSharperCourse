@@ -1,0 +1,35 @@
+﻿{#if $T.d.length == 0}
+<div class="info">
+    {BlogAdmin.i18n.youHaveNotDefinedAnyRolesSoFar}
+</div>
+{#else}
+<table id="RoleService" class="beTable rounded">
+  <thead>
+    <tr>
+	  <th width="20"><input type="checkbox" name="chkAllRoles" onclick="toggleAllChecks(this)"/></th>
+      <th width="auto">{BlogAdmin.i18n.roles}</th>
+	  <th width="120">&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    {#foreach $T.d as post}
+    <tr class="{#cycle values=['','alt']}">
+	  <td><input type="checkbox" name="chk"{$T.post.RoleName} class="chk"/></td>
+      <td class="editable">{$T.post.RoleName}</td>
+      <td>
+            <ul class="rowTools">
+                <li>
+                    <a class="toolsAction" href="#"><span class="">{BlogAdmin.i18n.tools}</span></a>
+                    <ul class="rowToolsMenu">
+                        {#if !$T.post.IsSystemRole}<li><a href="#" class="editButton editAction">{BlogAdmin.i18n.edit}</a></li>{#/if}
+                        {#if !$T.post.IsSystemRole}<li><a href="#" class="deleteButton deleteAction">{BlogAdmin.i18n.delete}</a></li>{#/if}
+                        <li><a href="Rights.aspx?role={$T.post.RoleName}" class="rightsAction">{BlogAdmin.i18n.rights}</a></li>
+                    </ul>
+                </li>
+            </ul>
+      </td>
+    </tr>
+    {#/for}
+  </tbody>
+</table>
+{#/if}

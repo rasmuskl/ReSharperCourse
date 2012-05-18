@@ -1,0 +1,156 @@
+﻿@using BlogEngine.Core
+@using BlogEngine.Core.Json
+@using BlogEngine.Core.Packaging
+@using System.Collections.Specialized
+
+@helper GetStats() {
+    var DraftPosts = (from pst in Post.Posts where pst.IsPublished == false select pst);
+    var DraftPages = (from pg in BlogEngine.Core.Page.Pages where pg.IsPublished == false select pg);
+
+    var Posts = (from pst in Post.Posts where pst.IsPublished == true select pst);
+    var PagesCnt = (from pg in BlogEngine.Core.Page.Pages where pg.IsPublished == true select pg).Count();
+
+    var CategoryList = new StringCollection();
+    var TagList = new StringCollection();
+
+    var commentsAll = 0;
+    var commentsSpam = 0;
+    var commentsUnap = 0;
+
+    foreach (var p in Posts) {
+        var comments = (from c in p.Comments where c.IsPingbackOrTrackback == false select c).ToList();
+
+        commentsAll += comments.Count;
+        commentsUnap += p.NotApprovedComments.Count;
+        commentsSpam += p.SpamComments.Count;
+
+        foreach (var c in p.Categories) {
+            if (!CategoryList.Contains(c.Id.ToString())) {
+                CategoryList.Add(c.Id.ToString());
+            }
+        }
+
+        foreach (var t in p.Tags) {
+            if (!TagList.Contains(t)) { TagList.Add(t); }
+        }
+    }
+
+    int uCount = 0;
+    Membership.Provider.GetAllUsers(0, 999, out uCount);   
+<li>
+    @Posts.Count() @Resources.labels.posts<a class="viewAction endline" href="Posts/Posts.aspx">@Resources.labels.viewAll</a><br />
+    @DraftPosts.Count() @Resources.labels.draftPosts
+</li>
+<li>
+    @PagesCnt @Resources.labels.pages<a class="viewAction endline" href="Pages/Pages.aspx">@Resources.labels.viewAll</a><br />
+    @DraftPages.Count() @Resources.labels.draftPages
+</li>
+<li>
+    @commentsAll @Resources.labels.comments <a class="viewAction endline" href="Comments/Approved.aspx">@Resources.labels.viewAll</a><br />
+    @commentsUnap @Resources.labels.unapproved <a class="viewAction endline" href="Comments/Pending.aspx">@Resources.labels.viewAll</a><br />
+    @commentsSpam @Resources.labels.spam <a class="viewAction endline" href="Comments/Spam.aspx">@Resources.labels.viewAll</a>
+</li>
+<li>
+    @CategoryList.Count @Resources.labels.categories
+        <a class="viewAction endline" href="Posts/Categories.aspx">@Resources.labels.viewAll</a>
+</li>
+<li>
+    @TagList.Count @Resources.labels.tags 
+        <a class="viewAction endline" href="Posts/Tags.aspx">@Resources.labels.viewAll</a>
+</li>
+<li>
+    @uCount @Resources.labels.users
+        <a class="viewAction endline" href="Users/Users.aspx">@Resources.labels.viewAll</a>
+</li>
+}
+
+@helper GetDraftPosts(){
+    var DraftPosts = (from pst in Post.Posts where pst.IsPublished == false select pst);
+    if(DraftPosts != null && DraftPosts.Count() > 0){ 
+    foreach (var p in DraftPosts) {
+        <li>
+            <a class='editAction' href="Posts/Add_entry.aspx?id=@p.Id">@Context.Server.HtmlEncode(p.Title)</a>
+            <span class="meta">Saved: @p.DateModified.ToShortDateString() by @p.Author at @p.DateModified.ToShortTimeString()<span>
+        </li>
+        }
+    }
+    else{
+        <li>@Resources.labels.youDontHaveAnyDraftPosts</li>
+    }
+}
+
+@helper GetDraftPages(){
+    var DraftPages = (from pg in BlogEngine.Core.Page.Pages where pg.IsPublished == false select pg);  
+    if(DraftPages != null && DraftPages.Count() > 0){
+        foreach (var pg in DraftPages) {
+		<li>
+            <a class="editAction" href="Pages/EditPage.aspx?id=@pg.Id">@Context.Server.HtmlEncode(pg.Title)</a>
+            <span class="meta">Saved: @pg.DateModified.ToShortDateString() at @pg.DateModified.ToShortTimeString()</span>
+        </li> 
+	    }
+    }
+    else{
+        <li>@Resources.labels.youDontHaveAnyDraftPages</li>
+    }
+}
+
+@helper GetLatestComments(){
+    var hdr = "";
+    var ftr = "";
+    List<JsonComment> jsonComments;
+        
+    if (BlogSettings.Instance.EnableCommentsModeration)
+    {
+        jsonComments = JsonComments.GetComments(CommentType.Pending, 10, 1);
+        hdr = Resources.labels.recentPendingComments;
+        ftr = "Pending.aspx";
+    }
+    else
+    {
+        hdr = Resources.labels.recentComments;
+        jsonComments = JsonComments.GetComments(CommentType.Approved, 10, 1);
+        ftr = "Approved.aspx";
+    }
+
+    <h2>@hdr</h2>
+    if (jsonComments.Count > 0)
+    {
+        <ul>
+        @foreach (var jc in jsonComments.Take(5))
+        {
+            <li>@Html.Raw(jc.Title)<span class='teaser'>@Html.Raw(jc.Teaser)</span></li>    
+        }
+        </ul>
+    }
+    <a class="viewAction" href="Comments/@ftr">@Resources.labels.viewAll</a>
+}
+
+@helper GetLatestPackages(){
+    var packages = PackageRepository.FromGallery("all", 0, Gallery.OrderType.Newest);
+    
+    if(packages != null && packages.Count() > 0){
+    <ul>
+        @foreach (var p in packages.Take(6)){
+		<li>
+            <div class="ext">
+                <img style="width: 40px; border: 0; float: left" src="@p.IconUrl" alt="icon url" />
+                <div style="margin-left: 50px; width: auto">
+                            
+                    @if(!string.IsNullOrEmpty(p.PackageUrl)){
+                        <a href="@p.PackageUrl" target="_new">
+                        <h4>@p.Title <span> - @Resources.labels.version: @p.OnlineVersion</span></h4> 
+                        </a>
+                    }
+                    else
+                    {
+                        <h4>@p.Title <span> - @Resources.labels.version: @p.OnlineVersion</span></h4> 
+                    }
+                    <p>@if(p.Description.Length > 140){@string.Format("{0}...",p.Description.Substring(0, 140))}else{@p.Description}</p>
+                </div>
+            </div>
+        </li>
+        }
+    </ul>
+    } 
+    <a class="viewAction endline" href="http://dnbegallery.org" target="_new">@Resources.labels.viewAll</a>
+}

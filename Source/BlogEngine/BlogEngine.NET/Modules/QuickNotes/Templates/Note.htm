@@ -1,0 +1,26 @@
+﻿<div class="q-main">
+    <div id="q-nav">
+        <div id="NoteIcon" class="sel">
+            {#if IsNewNote()}
+            <img id="q-anote" src="{BlogEngineRes.webRoot}Modules/QuickNotes/Images/note.png" />
+            {#else}
+            <a href="" id="q-anewnote" onclick="NewNote(); return false;"><img src="{BlogEngineRes.webRoot}Modules/QuickNotes/Images/add.png" /></a>
+            {#/if}
+        </div>
+        <div><a href="" id="q-alist" onclick="GetNotes(); return false;"><img src="{BlogEngineRes.webRoot}Modules/QuickNotes/Images/folder-50.png" /></a></div>
+        <div><a href="" id="q-asettings" onclick="GetSettings(); return false;"><img src="{BlogEngineRes.webRoot}Modules/QuickNotes/Images/tool-50.png" /></a></div>
+    </div>
+	<div class="q-left">
+		<textarea rows="5" cols="40" id="q-txtarea" class="q-area rounded">{JSON.parse($.cookie('quck-note-current')).Note}</textarea>
+		<div class="q-submit">
+			<input type="submit" name="submit" id="q-save" onclick="return SaveNote();" value="Save" class="primary rounded" />
+            {#if !IsNewNote()}
+			<a href="" id="q-publish" onclick="return SaveQuickPost();">Publish</a>
+            <a href="" id="q-delete" onclick="DeleteNote(); return false;">Delete</a>
+            {#/if}
+            or
+			<a href="#" class="closeup">Cancel</a>
+            <span id="q-loader" class="hidden" />
+		</div>
+	</div>
+</div>

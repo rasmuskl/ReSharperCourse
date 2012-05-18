@@ -1,0 +1,52 @@
+﻿@{
+   if(Request.QueryString["ext"] != null && Request.QueryString["act"] != null)
+   {
+       var ext = Request.QueryString["ext"];
+       var act = bool.Parse(Request.QueryString["act"]);
+
+       var rfr = Request.UrlReferrer.ToString();
+       var rdr = "default.cshtml";
+       
+       if(!string.IsNullOrEmpty(rfr))
+       {
+           if (rfr.Contains("enb=True")) 
+           { 
+               rfr = rfr.Replace("enb=True", "enb=False");
+               rdr = rfr;
+           }
+           else
+           {
+               if (rfr.Contains("enb=False")) 
+               { 
+                   rfr = rfr.Replace("enb=False", "enb=True");
+                   rdr = rfr;
+               }
+           }
+       }
+       
+       if(!string.IsNullOrEmpty(ext))
+       {
+           //BlogEngine.Core.Web.Extensions.ExtensionManager.ChangeBlogExtStatus(ext, BlogEngine.Core.Blog.CurrentInstance.Id, act);
+
+           var x = BlogEngine.Core.Web.Extensions.ExtensionManager.GetExtension(ext);
+           if (x != null)
+           {
+               if(act)
+               {
+                   x.Blogs.Remove(BlogEngine.Core.Blog.CurrentInstance.Id); 
+               }
+               else
+               {
+                   if(!x.Blogs.Contains(BlogEngine.Core.Blog.CurrentInstance.Id))
+                   {
+                       x.Blogs.Add(BlogEngine.Core.Blog.CurrentInstance.Id);    
+                   }    
+               }
+
+               BlogEngine.Core.Web.Extensions.ExtensionManager.SaveToStorage(x);
+           }
+           
+           Response.Redirect(rdr);    
+       }    
+   } 
+}

@@ -1,0 +1,113 @@
+@using QuixoteWeb;
+@using BlogEngine.Core
+
+@{
+    Layout = "_layout.cshtml";
+}
+
+@TheFollowing.Describes("Avatar tests (BlogEngine.Core.Avatar)")
+
+<div class="left-padded"><a href="default.cshtml"><span class="go-back"></span></a></div>
+
+@It.Should("get theme's image for theme that has noavatar.jpg if avatar set to \"none\" and not pingback/trackback", () => {
+
+    string temp = BlogSettings.Instance.Avatar;
+    BlogSettings.Instance.Avatar = "none";
+    
+    string tag = Avatar.GetAvatarImageTag("me@us.com", null, null, null, 0, 0);
+    BlogSettings.Instance.Avatar = temp;
+
+    return (tag.StartsWith("<img src=\"http://localhost") && 
+        tag.EndsWith("/themes/Standard/noavatar.jpg\" alt=\"\" width=\"80\" height=\"80\" />")).ShouldBeTrue();
+})
+
+@It.Should("get global image for themes without noavatar.jpg if avatar set to \"none\" and not pingback/trackback", () => {
+
+    string temp = BlogSettings.Instance.Avatar;
+    string tmpTheme = BlogSettings.Instance.Theme;
+    
+    BlogSettings.Instance.Avatar = "none";
+    BlogSettings.Instance.Theme = "Indigo";
+    
+    string tag = Avatar.GetAvatarImageTag("me@us.com", null, null, null, 0, 0);
+    
+    BlogSettings.Instance.Avatar = temp;
+    BlogSettings.Instance.Theme = tmpTheme;
+
+    return (tag.StartsWith("<img src=\"http://localhost") && 
+        tag.EndsWith("/pics/noavatar.jpg\" alt=\"\" width=\"80\" height=\"80\" />")).ShouldBeTrue();
+})
+
+@It.Should("get custom avatar image if avatar URL (different from email) provided", () => {
+
+    string aUrl = "http://www.gravatar.com/avatar/c892488508c53d9f039aca7d02afa7b2.jpg";
+    string tag = Avatar.GetAvatarImageTag("me@us.com", new Uri("http://rtur.net"), aUrl, "test", 90, 70);
+
+    return (tag == "<img class=\"photo\" src=\"http://www.gravatar.com/avatar/c892488508c53d9f039aca7d02afa7b2.jpg\" alt=\"test\" width=\"90\" height=\"70\" />").ShouldBeTrue();
+})
+
+@It.Should("get pingback/trackback thumbnail for pingbacks/trackbacks when avatar set to \"none\"", () => {
+
+    string temp = BlogSettings.Instance.Avatar;
+    BlogSettings.Instance.Avatar = "none";
+    BlogSettings.Instance.ThumbnailServiceApi = "http://www.robothumb.com/src/?url={0}";
+    
+    string tag = Avatar.GetAvatarImageTag("pingback", new Uri("http://asp.net"), null, "test", 90, 70);
+    BlogSettings.Instance.Avatar = temp;
+
+    return (tag == "<img class=\"thumb\" src=\"http://www.robothumb.com/src/?url=http://asp.net/\" alt=\"pingback\" width=\"90\" height=\"70\" />").ShouldBeTrue();
+})
+
+@It.Should("get pingback/trackback thumbnail for pingbacks/trackbacks when avatar other than \"none\"", () =>
+{
+    string temp = BlogSettings.Instance.Avatar;
+    BlogSettings.Instance.Avatar = "wavatar";
+
+    string tag = Avatar.GetAvatarImageTag("trackback", new Uri("http://asp.net"), null, "test", 90, 70);
+    BlogSettings.Instance.Avatar = temp;
+
+    return (tag == "<img class=\"thumb\" src=\"http://www.robothumb.com/src/?url=http://asp.net/\" alt=\"trackback\" width=\"90\" height=\"70\" />").ShouldBeTrue();
+})
+
+@It.Should("get default image for pingbacks/trackbacks when remote site is invalid", () =>
+{
+    string tag = Avatar.GetAvatarImageTag("trackback", new Uri("ftp://blah.test"));
+
+    return (tag.StartsWith("<img src=\"http://localhost") &&
+        tag.EndsWith("/themes/Standard/noavatar.jpg\" alt=\"\" width=\"80\" height=\"80\" />")).ShouldBeTrue();
+})
+
+@It.Should("get wavatar image when avatar set to \"wavatar\"", () =>
+{
+    string temp = BlogSettings.Instance.Avatar;
+    BlogSettings.Instance.Avatar = "wavatar";
+    
+    string tag = Avatar.GetAvatarImageTag("me@us.com");
+    BlogSettings.Instance.Avatar = temp;
+
+    return (tag == "<img class=\"photo\" src=\"http://www.gravatar.com/avatar/46e6d5d762c8016da96d9486e7162528.jpg?s=80&amp;d=wavatar\" alt=\"\" width=\"80\" height=\"80\" />").ShouldBeTrue();
+})
+
+@It.Should("get identicon image when avatar set to \"identicon\"", () =>
+{
+    string temp = BlogSettings.Instance.Avatar;
+    BlogSettings.Instance.Avatar = "identicon";
+    
+    string tag = Avatar.GetAvatarImageTag("me@us.com");
+    BlogSettings.Instance.Avatar = temp;
+
+    return (tag == "<img class=\"photo\" src=\"http://www.gravatar.com/avatar/46e6d5d762c8016da96d9486e7162528.jpg?s=80&amp;d=identicon\" alt=\"\" width=\"80\" height=\"80\" />").ShouldBeTrue();
+})
+
+@It.Should("get monsterid image when avatar set to \"monsterid\"", () =>
+{
+    string temp = BlogSettings.Instance.Avatar;
+    BlogSettings.Instance.Avatar = "monsterid";
+    
+    string tag = Avatar.GetAvatarImageTag("me@us.com");
+    BlogSettings.Instance.Avatar = temp;
+
+    return (tag == "<img class=\"photo\" src=\"http://www.gravatar.com/avatar/46e6d5d762c8016da96d9486e7162528.jpg?s=80&amp;d=monsterid\" alt=\"\" width=\"80\" height=\"80\" />").ShouldBeTrue();
+})
+
+<div class="left-padded"><a href="default.cshtml"><span class="go-back"></span></a></div>

@@ -1,0 +1,583 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="add" xml:space="preserve">
+    <value>הוסף</value>
+  </data>
+  <data name="add_Entry" xml:space="preserve">
+    <value>הוסף מודעה</value>
+  </data>
+  <data name="addComment" xml:space="preserve">
+    <value>הוסף תגובה</value>
+  </data>
+  <data name="addCustomCodeToHeader" xml:space="preserve">
+    <value>HTML- הוסף קוד מותאם לראש ה</value>
+  </data>
+  <data name="administrationPanel" xml:space="preserve">
+    <value>לוח בקרה\שליטה</value>
+  </data>
+  <data name="advanced" xml:space="preserve">
+    <value>מתקדם</value>
+  </data>
+  <data name="advancedSettings" xml:space="preserve">
+    <value>אפשרויות מתקדמות</value>
+  </data>
+  <data name="alternateFeedUrl" xml:space="preserve">
+    <value>Alternate feed URL</value>
+  </data>
+  <data name="approve" xml:space="preserve">
+    <value>אשר</value>
+  </data>
+  <data name="approveallcomments" xml:space="preserve">
+    <value>אשר כל התגובות להודעה</value>
+  </data>
+  <data name="archive" xml:space="preserve">
+    <value>ארכיון</value>
+  </data>
+  <data name="areYouSure" xml:space="preserve">
+    <value>? '{0}' האם אתה בטוח שברצונך לבצע על ה-{1} את הפעולה</value>
+    <comment>Needs to be reverse, because the language. but ok</comment>
+  </data>
+  <data name="attachFile" xml:space="preserve">
+    <value>צרף קובץ</value>
+  </data>
+  <data name="author" xml:space="preserve">
+    <value>מחבר</value>
+  </data>
+  <data name="avatars" xml:space="preserve">
+    <value>אווטר</value>
+  </data>
+  <data name="basic" xml:space="preserve">
+    <value>בסיסי</value>
+  </data>
+  <data name="beTheFirstToRate" xml:space="preserve">
+    <value>הייה הראשון לדרג את ההודעה</value>
+  </data>
+  <data name="blogMLDescription" xml:space="preserve">
+    <value>RSS-וגם ב BlogML-בתור הפורמט לייצוא. הייבוא תומך גם ב- BlogML-משתמש ב BlogEngine.NET</value>
+  </data>
+  <data name="blogroll" xml:space="preserve">
+    <value>בלוגים</value>
+  </data>
+  <data name="buttonText" xml:space="preserve">
+    <value>כפתור טקסט</value>
+  </data>
+  <data name="categories" xml:space="preserve">
+    <value>קטגוריות</value>
+  </data>
+  <data name="category" xml:space="preserve">
+    <value>קטגוריה</value>
+  </data>
+  <data name="closeCommetsAfter" xml:space="preserve">
+    <value>סגור תגובות לאחר</value>
+  </data>
+  <data name="combine" xml:space="preserve">
+    <value>קומבינציה</value>
+  </data>
+  <data name="comment" xml:space="preserve">
+    <value>הערה</value>
+  </data>
+  <data name="commentLabelText" xml:space="preserve">
+    <value>טקסט תג תגובה</value>
+  </data>
+  <data name="comments" xml:space="preserve">
+    <value>תגובות</value>
+  </data>
+  <data name="commentsAreClosed" xml:space="preserve">
+    <value>תגובות נעולות</value>
+  </data>
+  <data name="commentWasSaved" xml:space="preserve">
+    <value>תגובתך נשמרה. תודה על המשוב</value>
+  </data>
+  <data name="contact" xml:space="preserve">
+    <value>קשר</value>
+  </data>
+  <data name="contactForm" xml:space="preserve">
+    <value>טופס יצירת קשר</value>
+  </data>
+  <data name="controls" xml:space="preserve">
+    <value>קונטרולים</value>
+  </data>
+  <data name="country" xml:space="preserve">
+    <value>מדינה</value>
+  </data>
+  <data name="createNewUser" xml:space="preserve">
+    <value>צור משתמש חדש</value>
+  </data>
+  <data name="currentlyRated" xml:space="preserve">
+    <value>{0}: מספר מדרגים:{1} דרוג</value>
+  </data>
+  <data name="date" xml:space="preserve">
+    <value>תאריך</value>
+  </data>
+  <data name="defaultFeedOutput" xml:space="preserve">
+    <value>מזין ברירת מחדל</value>
+  </data>
+  <data name="defaultTextShownInSearchField" xml:space="preserve">
+    <value>טקסט ברירת מחדל שיוצג בשורת החיפוש</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>מחק</value>
+  </data>
+  <data name="description" xml:space="preserve">
+    <value>תיאור</value>
+  </data>
+  <data name="displayCommentsOnRecentPosts" xml:space="preserve">
+    <value>הצג תגובות</value>
+  </data>
+  <data name="displayRatingsOnRecentPosts" xml:space="preserve">
+    <value>הצג דרוג</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>ערוך</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>אמייל</value>
+  </data>
+  <data name="emailAddress" xml:space="preserve">
+    <value>כתובת אימייל</value>
+  </data>
+  <data name="enableAttachments" xml:space="preserve">
+    <value>אפשר צירוף קבצים</value>
+  </data>
+  <data name="enableCoComments" xml:space="preserve">
+    <value>אפשר תגובות לתגובות</value>
+  </data>
+  <data name="enableComments" xml:space="preserve">
+    <value>אפשר תגובות</value>
+  </data>
+  <data name="enableCommentsDescription" xml:space="preserve">
+    <value>אם התגובות לא מאופשרות, אף אחד לא יכול להוסיף תגובה לשום הודעה</value>
+  </data>
+  <data name="enableCommentSearch" xml:space="preserve">
+    <value>אפשר חיפוש תגובות</value>
+  </data>
+  <data name="enableCommentsModeration" xml:space="preserve">
+    <value>Moderate comments</value>
+  </data>
+  <data name="enableGravatars" xml:space="preserve">
+    <value>Gravatars אפשר</value>
+  </data>
+  <data name="enableHttpCompression" xml:space="preserve">
+    <value>HTTP אפשר דחיסת</value>
+  </data>
+  <data name="enableHttpCompressionDescription" xml:space="preserve">
+    <value>(אפשר טעינה מהירה של הדפים (מומלץ</value>
+  </data>
+  <data name="enableOpenSearch" xml:space="preserve">
+    <value>אפשר חיפוש פתוח</value>
+  </data>
+  <data name="enableOpenSearchDescription" xml:space="preserve">
+    <value>(הוסף אפשרות חיפוש לכל הדפדפנים החדשים (מומלץ</value>
+  </data>
+  <data name="enableRating" xml:space="preserve">
+    <value>אפשר דירוג להודעות</value>
+  </data>
+  <data name="enableReferrerTracking" xml:space="preserve">
+    <value>אפשר מעקב אחר מקור ההגעה</value>
+  </data>
+  <data name="enableSearchHighlight" xml:space="preserve">
+    <value>אשר הדגשת תוצאות חיפוש</value>
+  </data>
+  <data name="enableSearchHighlightDescription" xml:space="preserve">
+    <value>צבעי הדגשת תוצאות החיפוש בדף</value>
+  </data>
+  <data name="enableSsl" xml:space="preserve">
+    <value>SSL אפשר</value>
+  </data>
+  <data name="endorsment" xml:space="preserve">
+    <value>Endorsement (bLink)</value>
+  </data>
+  <data name="enforce" xml:space="preserve">
+    <value>הכרח</value>
+  </data>
+  <data name="export" xml:space="preserve">
+    <value>ייצא</value>
+  </data>
+  <data name="formMessage" xml:space="preserve">
+    <value>טופס הודעה</value>
+  </data>
+  <data name="goToFrontPage" xml:space="preserve">
+    <value>עבור לדף ראשי</value>
+  </data>
+  <data name="handleWwwSubdomain" xml:space="preserve">
+    <value> www subdomain מדיניות</value>
+  </data>
+  <data name="home" xml:space="preserve">
+    <value>דף בית</value>
+    <comment>As used for linking to the front-page</comment>
+  </data>
+  <data name="htmlHeadSection" xml:space="preserve">
+    <value>HTML head section</value>
+  </data>
+  <data name="ignore" xml:space="preserve">
+    <value>התעלם</value>
+  </data>
+  <data name="import" xml:space="preserve">
+    <value>ייבא</value>
+  </data>
+  <data name="isFrontPage" xml:space="preserve">
+    <value>האם דף ראשי</value>
+  </data>
+  <data name="keywords" xml:space="preserve">
+    <value>מילות מפתח</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>בחר שפה</value>
+  </data>
+  <data name="languageCode" xml:space="preserve">
+    <value>קוד שפה</value>
+  </data>
+  <data name="latitude" xml:space="preserve">
+    <value>קו רוחב</value>
+    <comment>Not sure...</comment>
+  </data>
+  <data name="livePreview" xml:space="preserve">
+    <value>תצוגה מקדימה</value>
+  </data>
+  <data name="longtitude" xml:space="preserve">
+    <value>קו אורך</value>
+    <comment>Not sure...</comment>
+  </data>
+  <data name="maxLengthOfItems" xml:space="preserve">
+    <value>מספר מירבי של פריטים</value>
+  </data>
+  <data name="message" xml:space="preserve">
+    <value>הודעה</value>
+  </data>
+  <data name="monster" xml:space="preserve">
+    <value>מפלצת</value>
+  </data>
+  <data name="more" xml:space="preserve">
+    <value>עוד</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>שם</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>הסתר</value>
+  </data>
+  <data name="noParent" xml:space="preserve">
+    <value>ללא אב</value>
+  </data>
+  <data name="notifyOnNewComments" xml:space="preserve">
+    <value>הודע לי שיש תגובה חדשה</value>
+  </data>
+  <data name="notRatedYet" xml:space="preserve">
+    <value>לא דורג עדיין</value>
+  </data>
+  <data name="numberOfComments" xml:space="preserve">
+    <value>מספר תגובות</value>
+  </data>
+  <data name="numberOfDisplayedItems" xml:space="preserve">
+    <value>מספר פריטים מוצגים</value>
+  </data>
+  <data name="numberOfPosts" xml:space="preserve">
+    <value>מספר הודעות</value>
+  </data>
+  <data name="page" xml:space="preserve">
+    <value>דף</value>
+  </data>
+  <data name="pages" xml:space="preserve">
+    <value>דפים</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>סיסמה</value>
+  </data>
+  <data name="portNumber" xml:space="preserve">
+    <value>מספר פורט</value>
+  </data>
+  <data name="portNumberDescription" xml:space="preserve">
+    <value>הסטנדרט הוא פורט 25</value>
+  </data>
+  <data name="possibleSpam" xml:space="preserve">
+    <value>ייתכן וספאם</value>
+  </data>
+  <data name="post" xml:space="preserve">
+    <value>הודעה</value>
+  </data>
+  <data name="postPerPage" xml:space="preserve">
+    <value>הודעות לדף</value>
+  </data>
+  <data name="posts" xml:space="preserve">
+    <value>הודעות</value>
+  </data>
+  <data name="postsPerFeed" xml:space="preserve">
+    <value>פריטים שיוצגו במזין</value>
+  </data>
+  <data name="publish" xml:space="preserve">
+    <value>פרסם</value>
+  </data>
+  <data name="raters" xml:space="preserve">
+    <value>מדרגים</value>
+  </data>
+  <data name="rating" xml:space="preserve">
+    <value>דרוג</value>
+  </data>
+  <data name="recentComments" xml:space="preserve">
+    <value>תגובות אחרונות</value>
+  </data>
+  <data name="recentPosts" xml:space="preserve">
+    <value>הודעות אחרונות</value>
+  </data>
+  <data name="referrer" xml:space="preserve">
+    <value>Referrer</value>
+  </data>
+  <data name="referrers" xml:space="preserve">
+    <value>Referrers</value>
+  </data>
+  <data name="relatedPosts" xml:space="preserve">
+    <value>הודעות קשורות</value>
+  </data>
+  <data name="remove" xml:space="preserve">
+    <value>הסר</value>
+  </data>
+  <data name="save" xml:space="preserve">
+    <value>שמור</value>
+  </data>
+  <data name="saveComment" xml:space="preserve">
+    <value>שמור תגובה</value>
+  </data>
+  <data name="savePage" xml:space="preserve">
+    <value>שמור דף</value>
+  </data>
+  <data name="savePost" xml:space="preserve">
+    <value>שמור הודעה</value>
+  </data>
+  <data name="saveSettings" xml:space="preserve">
+    <value>שמור הגדרות</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>חפש</value>
+  </data>
+  <data name="searchField" xml:space="preserve">
+    <value>שדה חיפוש</value>
+  </data>
+  <data name="searchFieldText" xml:space="preserve">
+    <value>שדה חיפוש טקסט</value>
+  </data>
+  <data name="searchResultsFor" xml:space="preserve">
+    <value>תוצאות חיפוש ל</value>
+  </data>
+  <data name="selectDay" xml:space="preserve">
+    <value>בחר יום</value>
+  </data>
+  <data name="selectParent" xml:space="preserve">
+    <value>בחר אב</value>
+  </data>
+  <data name="sendCommentEmail" xml:space="preserve">
+    <value>שלח תגובה אימייל</value>
+  </data>
+  <data name="separateTagsWitComma" xml:space="preserve">
+    <value>הפרד כל תג עם פסיק</value>
+  </data>
+  <data name="settings" xml:space="preserve">
+    <value>הגדרות</value>
+  </data>
+  <data name="showCountryChooser" xml:space="preserve">
+    <value>הצג אפשרת בחירת מדינה</value>
+  </data>
+  <data name="showCountryChooserDescription" xml:space="preserve">
+    <value>אם אפשרות בחירה של מדינות לא מוצגת, שום דגל לא יוצג ליד כל תגובה</value>
+  </data>
+  <data name="showEnableWebsiteInComments" xml:space="preserve">
+    <value>Need Translation:Enable Website in Comments</value>
+  </data>
+  <data name="showEnableWebsiteInCommentsDescription" xml:space="preserve">
+    <value>Need Translation:Choose whether to allow Website to be published in Comments</value>
+  </data>
+  <data name="showDescriptionInPostList" xml:space="preserve">
+    <value>הצג רק תיאור של הודעות</value>
+  </data>
+  <data name="showInList" xml:space="preserve">
+    <value>הצג ברשימה</value>
+  </data>
+  <data name="showLivePreview" xml:space="preserve">
+    <value>הצג תצוגה מקדימה</value>
+  </data>
+  <data name="showRelatedPosts" xml:space="preserve">
+    <value>הצג הודעות קשורות</value>
+  </data>
+  <data name="subject" xml:space="preserve">
+    <value>נושא</value>
+  </data>
+  <data name="subscribe" xml:space="preserve">
+    <value>הרשם לעידכונים</value>
+  </data>
+  <data name="thankYouMessage" xml:space="preserve">
+    <value>הודעה תודה</value>
+  </data>
+  <data name="theComment" xml:space="preserve">
+    <value>התגובה</value>
+  </data>
+  <data name="theme" xml:space="preserve">
+    <value>תמה</value>
+  </data>
+  <data name="thePost" xml:space="preserve">
+    <value>ההודעה</value>
+  </data>
+  <data name="thereAreXDrafts" xml:space="preserve">
+    <value>יש {0} הודעות לא מפורסמות</value>
+  </data>
+  <data name="timeStampPostLinks" xml:space="preserve">
+    <value>הוסף תאריך ללינק ההודעה</value>
+  </data>
+  <data name="timezone" xml:space="preserve">
+    <value>(offset) קיזוז זמן שרת</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>כותרת</value>
+  </data>
+  <data name="trimStylesheet" xml:space="preserve">
+    <value>stylesheets-הסר רווחים מהתחלה וסוף ה</value>
+  </data>
+  <data name="trimStylesheetDescription" xml:space="preserve">
+    <value>ע"י הסרת רווחים מיותרים בזצן ריצה Stylesheet- כווץ כל ה</value>
+  </data>
+  <data name="unapprovedcomments" xml:space="preserve">
+    <value>תגובות לא מאושרות</value>
+  </data>
+  <data name="updateFrequenzy" xml:space="preserve">
+    <value>(תדירות עידכון (בדקות</value>
+  </data>
+  <data name="uploadFile" xml:space="preserve">
+    <value>העלה קובץ</value>
+  </data>
+  <data name="uploadImage" xml:space="preserve">
+    <value>העלה תמונה</value>
+  </data>
+  <data name="userName" xml:space="preserve">
+    <value>שם משתמש</value>
+  </data>
+  <data name="users" xml:space="preserve">
+    <value>משתמשים</value>
+  </data>
+  <data name="website" xml:space="preserve">
+    <value>אתר אינטרנט</value>
+  </data>
+  <data name="willShowGravatar" xml:space="preserve">
+    <value>יציג את האייקון ה-{0} שלך</value>
+  </data>
+  <data name="wrote" xml:space="preserve">
+    <value>כתב</value>
+  </data>
+  <data name="youAlreadyRated" xml:space="preserve">
+    <value>כבר דירגת</value>
+  </data>
+</root>

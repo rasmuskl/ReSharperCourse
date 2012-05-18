@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<post>
+  <author>Admin</author>
+  <title>Welcome to BlogEngine.NET 2.6</title>
+  <description>The description is used as the meta description as well as shown in the related posts. It is recommended that you write a description, but not mandatory</description>
+  <content>&lt;p&gt;If you see this post it means that BlogEngine.NET 2.6 is running and the hard part of creating your own blog is done. There is only a few things left to do.&lt;/p&gt;
+&lt;h2&gt;Write Permissions&lt;/h2&gt;
+&lt;p&gt;To be able to log in to the blog and writing posts, you need to enable write permissions on the App_Data folder. If your blog is hosted at a hosting provider, you can either log into your account&amp;rsquo;s admin page or call the support. You need write permissions on the App_Data folder because all posts, comments, and blog attachments are saved as XML files and placed in the App_Data folder.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;If you wish to use a database to to store your blog data, we still encourage you to enable this write access for an images you may wish to store for your blog posts.&amp;nbsp; If you are interested in using Microsoft SQL Server, MySQL, SQL CE, or other databases, please see the &lt;a href="http://blogengine.codeplex.com/documentation"&gt;BlogEngine wiki&lt;/a&gt; to get started.&lt;/p&gt;
+&lt;h2&gt;Security&lt;/h2&gt;
+&lt;p&gt;When you've got write permissions to the App_Data folder, you need to change the username and password. Find the sign-in link located either at the bottom or top of the page depending on your current theme and click it. Now enter "admin" in both the username and password fields and click the button. You will now see an admin menu appear. It has a link to the "Users" admin page. From there you can change the username and password.&amp;nbsp; Passwords are hashed by default so if you lose your password, please see the &lt;a href="http://blogengine.codeplex.com/documentation"&gt;BlogEngine wiki&lt;/a&gt; for information on recovery.&lt;/p&gt;
+&lt;h2&gt;Configuration and Profile&lt;/h2&gt;
+&lt;p&gt;Now that you have your blog secured, take a look through the settings and give your new blog a title.&amp;nbsp; BlogEngine.NET 2.6 is set up to take full advantage of of many semantic formats and technologies such as FOAF, SIOC and APML. It means that the content stored in your BlogEngine.NET installation will be fully portable and auto-discoverable.&amp;nbsp; Be sure to fill in your author profile to take better advantage of this.&lt;/p&gt;
+&lt;h2&gt;Themes, Widgets &amp;amp; Extensions&lt;/h2&gt;
+&lt;p&gt;One last thing to consider is customizing the look of your blog.&amp;nbsp; We have a few themes available right out of the box including two fully setup to use our new widget framework.&amp;nbsp; The widget framework allows drop and drag placement on your side bar as well as editing and configuration right in the widget while you are logged in.&amp;nbsp; Extensions allow you to extend and customize the behaivor of your blog.&amp;nbsp; Be sure to check the &lt;a href="http://dnbegallery.org/"&gt;BlogEngine.NET Gallery&lt;/a&gt; at &lt;a href="http://dnbegallery.org/"&gt;dnbegallery.org&lt;/a&gt; as the go-to location for downloading widgets, themes and extensions.&lt;/p&gt;
+&lt;h2&gt;On the web&lt;/h2&gt;
+&lt;p&gt;You can find BlogEngine.NET on the &lt;a href="http://www.dotnetblogengine.net"&gt;official website&lt;/a&gt;. Here you'll find tutorials, documentation, tips and tricks and much more. The ongoing development of BlogEngine.NET can be followed at &lt;a href="http://blogengine.codeplex.com/"&gt;CodePlex&lt;/a&gt; where the daily builds will be published for anyone to download.&amp;nbsp; Again, new themes, widgets and extensions can be downloaded at the &lt;a href="http://dnbegallery.org/"&gt;BlogEngine.NET gallery&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Good luck and happy writing.&lt;/p&gt;
+&lt;p&gt;The BlogEngine.NET team&lt;/p&gt;</content>
+  <ispublished>True</ispublished>
+  <isdeleted>False</isdeleted>
+  <iscommentsenabled>True</iscommentsenabled>
+  <pubDate>2012-04-20 10:00:00</pubDate>
+  <lastModified>2012-04-20 10:00:00</lastModified>
+  <raters>5</raters>
+  <rating>4.24</rating>
+  <slug>Welcome-to-BlogEngineNET-26</slug>
+  <tags>
+    <tag>blog</tag>
+    <tag>welcome</tag>
+  </tags>
+  <comments>
+    <comment id="82c3783e-5ea4-4a6e-b5b2-55d53da0a6c6" parentid="00000000-0000-0000-0000-000000000000" approved="True" spam="False" deleted="False">
+      <date>2010-01-03 17:58:00</date>
+      <author>Visitor 1</author>
+      <email>post@example.com</email>
+      <country>be</country>
+      <ip>127.0.0.1</ip>
+      <content>comment 1</content>
+    </comment>
+    <comment id="20574909-b777-4246-9b15-d70a3a795fcc" parentid="00000000-0000-0000-0000-000000000000" approved="True" spam="False" deleted="False">
+      <date>2010-01-15 17:01:59</date>
+      <author>Visitor 2</author>
+      <email>post@example.com</email>
+      <country />
+      <ip>127.0.0.1</ip>
+      <content>comment 2</content>
+    </comment>
+    <comment id="72484d70-ac56-4753-b4c1-7d34ee11e7d6" parentid="82c3783e-5ea4-4a6e-b5b2-55d53da0a6c6" approved="True" spam="False" deleted="False">
+      <date>2010-01-15 17:02:13</date>
+      <author>Admin</author>
+      <email>post@example.com</email>
+      <country />
+      <ip>127.0.0.1</ip>
+      <content>comment 3</content>
+    </comment>
+  </comments>
+  <categories>
+    <category>19770e74-9ec9-4cde-b2ab-e5051aaaf348</category>
+  </categories>
+  <notifications />
+</post>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<InstalledPackageFiles>
+    <item id="JQ-Mobile" fileorder="1" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\App_Code\JQ-Mobile" isdirectory="True" />
+    <item id="JQ-Mobile" fileorder="2" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\App_Code\JQ-Mobile\ThemeHelper.cs" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="3" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile" isdirectory="True" />
+    <item id="JQ-Mobile" fileorder="4" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\controls" isdirectory="True" />
+    <item id="JQ-Mobile" fileorder="5" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\controls\CommentView.ascx" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="6" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\controls\CommentView.ascx.cs" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="7" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\controls\Header.ascx" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="8" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\controls\Header.ascx.cs" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="9" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\controls\MainHeader.ascx" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="10" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\controls\MainHeader.ascx.cs" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="11" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\controls\Pager.ascx" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="12" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\controls\Pager.ascx.cs" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="13" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\controls\PostList.ascx" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="14" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\controls\PostList.ascx.cs" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="15" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\Archive.aspx" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="16" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\Archive.aspx.cs" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="17" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\CommentView.ascx" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="18" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\Contact.aspx" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="19" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\Contact.aspx.cs" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="20" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\logo.png" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="21" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\newsletter.html" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="22" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\Post.aspx" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="23" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\Post.aspx.cs" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="24" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\PostView.ascx" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="25" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\PostView.ascx.cs" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="26" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\Readme.txt" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="27" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\Search.aspx" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="28" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\Search.aspx.cs" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="29" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\site.master" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="30" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\site.master.cs" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="31" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\style.css" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="32" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\theme.png" isdirectory="False" />
+    <item id="JQ-Mobile" fileorder="33" filepath="D:\Src\Hg\be\BlogEngine\BlogEngine.NET\themes\JQ-Mobile\theme.xml" isdirectory="False" />
+</InstalledPackageFiles>

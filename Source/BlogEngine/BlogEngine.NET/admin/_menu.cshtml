@@ -1,0 +1,50 @@
+﻿
+@using BlogEngine.Core
+
+<ul id="ulMenu" class="toprounded">
+@{
+    var sitemap = SiteMap.Providers["SecuritySiteMap"];
+    if (sitemap != null)
+    {
+        var root = sitemap.RootNode;
+        if (root != null)
+        {
+            foreach (
+                var adminNode in
+                    root.ChildNodes.Cast<SiteMapNode>().Where(
+                        adminNode => adminNode.IsAccessibleToUser(HttpContext.Current)).Where(
+                            adminNode =>
+                            this.Request.RawUrl.ToUpperInvariant().Contains("/ADMIN/") ||
+                            (!adminNode.Url.Contains("xmanager") && !adminNode.Url.Contains("PingServices"))))
+            {
+                var cls = "";
+                var nodeUrl = adminNode.Url;
+                var startIndx = nodeUrl.LastIndexOf("/admin/") > 0 ? nodeUrl.LastIndexOf("/admin/") : 0;
+                var endIndx = adminNode.Url.LastIndexOf(".") > 0 ? adminNode.Url.LastIndexOf(".") : adminNode.Url.Length;
+                var nodeDir = adminNode.Url.Substring(startIndx, endIndx - startIndx);
+                
+                if (Request.RawUrl.IndexOf(nodeUrl, StringComparison.OrdinalIgnoreCase) != -1 ||
+                    (Request.RawUrl.IndexOf(nodeDir, StringComparison.OrdinalIgnoreCase) != -1) &&
+                    !nodeDir.EndsWith("/admin"))
+                {
+                    cls = "current";
+                }
+
+                // if "page" has its own subfolder (comments, extensions etc.) 
+                // select parent tab when navigating through child tabs
+                startIndx = nodeDir.LastIndexOf("/");
+                if(startIndx > 0)
+                {
+                    nodeDir = nodeDir.Substring(0, startIndx);
+                    if (Request.RawUrl.ToLower().Contains(nodeDir.ToLower() + "/") && nodeDir.Substring(1, nodeDir.Length -1).IndexOf("/") > 0)
+                    {
+                        cls = "current";
+                    }
+                }
+
+                <li><a href="@(Utils.RelativeWebRoot + adminNode.Url.Substring(Utils.ApplicationRelativeWebRoot.Length))" class="@cls"><span>@Utils.Translate(adminNode.Title, adminNode.Title)</span></a></li>
+            }
+        }
+    }
+}
+</ul> 

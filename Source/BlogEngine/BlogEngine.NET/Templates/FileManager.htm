@@ -1,0 +1,58 @@
+﻿{#if $T.d.Files.length == 0}
+<br />
+<div style="overflow-x:hidden;overflow-y:auto;width:690px;margin:0;">
+    <table id="Table1" class="beTable rounded" style="width:100%;background:#fff;color:#000;;margin:0;">
+        <thead>
+            <tr>
+                <th width="20" class="fmDCell"></th>
+                <th width="390"class="fmDCell">{BlogAdmin.i18n.name}</th>
+                <th width="90" class="fmDCell">{BlogAdmin.i18n.size}</th>
+                <th width="190" class="fmDCell">{BlogAdmin.i18n.createdOn}</th>
+            </tr>
+        </thead>
+    </table>
+    <div class="info" style="margin:0;">
+        {BlogAdmin.i18n.noFilesFound}
+    </div>
+</div>
+{#else}
+{$T.d.Path}
+<div style="overflow-x:hidden;overflow-y:auto;width:690px;margin:0;">
+    <table id="Files" class="beTable" style="width:100%;background:#fff;color:#000;margin:0;">
+        <thead>
+            <tr>
+                <th width="20" class="fmDCell"></th>
+                <th width="390"class="fmDCell">{BlogAdmin.i18n.name}</th>
+                <th width="90" class="fmDCell">{BlogAdmin.i18n.size}</th>
+                <th width="190" class="fmDCell">{BlogAdmin.i18n.createdOn}</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div style="height:160px;overflow-x:hidden;overflow-y:auto;width:690px;margin:0;background:#fff;">
+    <table class="beTable" style="width:100%;background:#fff;color:#000;margin:0;border-top:0;">
+        <tbody>
+            {#foreach $T.d.Files as b}
+            <tr class="fmDRow" data-path='{$T.b.FullPath}' data-type='{$T.b.FileType}' >
+                <td width="20" class="fmDCell">
+                    <img src='{$T.b.Image}' alt='{$T.b.Name}' height="16px" width="16px" />
+                </td>
+                <td width="390" class="fmDCell">
+                    <span>
+                        {$T.b.Name}
+                    </span>
+                    <input type="text" data-name='{$T.b.Name}' data-path='{$T.b.FullPath}' class="fmDRename" style="display:none;" value='{$T.b.Name}' />
+                </td>
+                <td width="90" class="fmDCell">
+                    {$T.b.Size}
+                </td>
+                <td width="190" class="fmDCell">
+                    {$T.b.Created}
+                </td>
+            
+            </tr>
+            {#/for}
+        </tbody>
+    </table>
+</div>
+{#/if}

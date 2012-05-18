@@ -1,0 +1,127 @@
+﻿@using BlogEngine.Core
+@using BlogEngine.Core.Web.Extensions
+@{ 
+    Page.Title = Resources.labels.extensions;
+    Layout = "../_Layout.cshtml";
+
+    var extensions = ExtensionManager.Extensions.Where(x => x.Key != "MetaExtension").ToList();
+
+    var canManagePackages = BlogEngine.Core.Blog.CurrentInstance.IsPrimary;
+
+    extensions.Sort(
+        (e1, e2) => e1.Value.Priority == e2.Value.Priority ? string.CompareOrdinal(e1.Key, e2.Key) : e1.Value.Priority.CompareTo(e2.Value.Priority));
+
+    List<ManagedExtension> manExtensions = new List<ManagedExtension>();
+
+    foreach (KeyValuePair<string, ManagedExtension> ext in extensions)
+    {
+        var oExt = ExtensionManager.GetExtension(@ext.Key);
+        manExtensions.Add(oExt);
+    } 
+}
+
+<script type="text/javascript" src="../jquery.colorbox.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".changePriority").colorbox({ width: "300px", inline: true, href: "#frmPriority" });
+    });
+
+    function closeOverlay() {
+        $('#txtPriority').val('');
+        $('#txtPriorityReq').addClass('hidden');
+        $.colorbox.close();
+        return false;
+    }
+</script>
+
+<div class="content-box-outer">
+    @if (Blog.CurrentInstance.IsPrimary)
+    {
+	<div class="content-box-right">
+        <ul>   
+        @foreach (var x in manExtensions)
+        {
+            var lnk = string.IsNullOrEmpty(x.AdminPage) ?
+                string.Format(Utils.RelativeWebRoot + "admin/Extensions/Settings.aspx?ext={0}&enb={1}", x.Name, x.Enabled) :
+                string.Format(x.AdminPage, x.Name, x.Enabled);
+
+            if (x.Settings.Count > 0 && x.Settings[0] != null && x.ShowSettings != false)
+            {
+            <li><a href="@Href(lnk)">@x.Name</a></li>
+            }
+        }   
+        </ul>
+	</div>
+	<div class="content-box-left">
+        <div  style="display:none;">
+            <div id="frmPriority" class="overlaypanel">
+                <h2>Change Priority</h2>
+		        <label for="txtPriority" class="lbl">@Resources.labels.priority</label>
+		        <input type="text" id="txtPriority" class="txt200" />
+                <input type="text" id="hdnExtensionName" style="display:none" />
+		        <span id="txtPriorityReq" class="req hidden">*</span>
+		        <br/><br/>
+		        <input type="submit" class="btn primary rounded" value="@Resources.labels.save" onclick="return ChangePriority();" />
+		        @Resources.labels.or <a href="" onclick="return closeOverlay();">@Resources.labels.cancel</a>
+                <br/><br/>
+	        </div>
+        </div>
+
+        <div class="TabRow">
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab AlternatePageTabSelected">Extensions</span>
+            </div>
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab" onclick="location.href='Themes.cshtml'">@Resources.labels.themes</span>
+            </div>
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab" onclick="location.href='Widgets.cshtml'">Widgets</span>
+            </div>
+            <div class="TabRight">
+                @Resources.labels.installed
+                @if (canManagePackages)
+                {
+                    <span>|</span> <a href="Extensions.cshtml">@Resources.labels.gallery</a>
+                }
+            </div>
+        </div>
+       
+
+        <div>@Helpers.ExtensionsHelper.GetExtensions(true)</div>
+        <div>@Helpers.ExtensionsHelper.GetExtensions(false)</div>
+	</div>
+    }
+    else
+    {
+    <div class="content-box-full">
+        
+        <div class="TabRow">
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab AlternatePageTabSelected">Extensions</span>
+            </div>
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab" onclick="location.href='Themes.cshtml'">@Resources.labels.themes</span>
+            </div>
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab" onclick="location.href='Widgets.cshtml'">Widgets</span>
+            </div>
+            <div class="TabRight">
+                @Resources.labels.installed
+                @if (canManagePackages)
+                {
+                    <span>|</span> <a href="Extensions.cshtml">@Resources.labels.gallery</a>
+                }
+            </div>
+        </div>
+
+        <div>@Helpers.ExtensionsHelper.GetBlogExtensions(true)</div>
+        <div>@Helpers.ExtensionsHelper.GetBlogExtensions(false)</div>
+    </div>
+    }
+</div>

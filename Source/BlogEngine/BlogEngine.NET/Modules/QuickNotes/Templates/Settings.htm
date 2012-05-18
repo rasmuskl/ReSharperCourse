@@ -1,0 +1,30 @@
+﻿<div class="q-main">
+    <div id="q-nav">
+        <div><a href="" id="q-anote" onclick="GetNote(''); return false;"><img src="{BlogEngineRes.webRoot}Modules/QuickNotes/Images/note-50.png" /></a></div>
+        <div><a href="" id="q-alist" onclick="GetNotes(); return false;"><img src="{BlogEngineRes.webRoot}Modules/QuickNotes/Images/folder-50.png" /></a></div>
+        <div class="sel"><img id="q-asettings" src="{BlogEngineRes.webRoot}Modules/QuickNotes/Images/tool.png" /></div>
+    </div>
+	<div class="q-left">
+		<div class="q-set-1">
+            <p>
+                <span>Default post category</span>
+                <select id="selCategory" class="rounded">
+                    {#foreach $T.d.Categories as category}
+                    <option value="{$T.category.Id}" {#if $T.d.Settings.length > 0}{#foreach $T.d.Settings as setting}{#if $T.setting.SettingName == 'category' && $T.setting.SettingValue == $T.category.Id}selected="selected"{#/if}{#/for}{#/if}>{$T.category.Title}</option>
+                    {#/for}
+                </select>
+            </p>
+        </div>
+        <div class="q-set-2">
+            <p>
+                <span>Tags (comma delimited)</span>              
+                <input class="field rounded" type="text" id="txtTags" value="{#if $T.d.Settings.length > 0}{#foreach $T.d.Settings as setting}{#if $T.setting.SettingName == 'tags'}{$T.setting.SettingValue}{#/if}{#/for}{#/if}" size="30" />
+            </p>
+        </div>
+		<p>
+			<input type="submit" name="submit" id="q-save" value="Save" onclick="SaveSettings(); return false;" class="primary rounded" />
+			or <a href="#" class="closeup">Cancel</a>
+            <span id="q-loader" class="hidden" />
+		</p>
+	</div>
+</div>

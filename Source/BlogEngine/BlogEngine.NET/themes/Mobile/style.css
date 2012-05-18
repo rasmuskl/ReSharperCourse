@@ -1,0 +1,366 @@
+﻿body{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+h1 {
+	color: #666666;
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #FFF;
+}
+
+h2 {
+	color: #666666;
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #FFF;
+	margin-bottom: 0px;
+}
+
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	font-size: 32px;
+	background-color: #FFF;
+}
+
+img{
+	border: none;
+}
+
+input {
+	background-color: #FFF;
+	color: #999999;
+	border: 1px solid #CCC;
+	font-size: 11px;
+	padding: 3px;
+}
+
+.button {
+	padding: 2px;
+}
+
+/* HEADER ELEMENTS */
+
+#header {
+	border-bottom: 2px solid #948979;
+	margin-bottom: 10px;	
+}
+
+#header h3 {
+	margin: 0;
+}
+
+#header p {
+	color: gray;
+	margin: 0 0 10px 0;
+}
+
+/* CONTENT ELEMENTS */
+
+#content {
+	line-height: 1.6em;
+}
+
+#content .postheader {
+	color: #666666;
+	text-decoration: none;
+}
+
+#content .postheader:hover {
+	color: #666666;
+	background-color: #F5F5F5;
+}
+
+#content .author {
+	float:left;
+	color: Gray;
+}
+
+#content .pubDate {
+	float: right;
+	color: Gray;
+}
+
+#content .entry{
+	clear: both;
+}
+
+#content .postfooter {
+	margin-top: 8px;
+	border-bottom: 1px solid #DDDDDD;
+	border-top: 1px solid #DDDDDD;
+}
+
+#postnavigation{
+	height: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	color: Gray;
+}
+
+/* FOOTER ELEMENTS */
+
+#footer {
+	margin-top: 20px;
+	clear: both;
+	background-color: #575352;
+	padding: 0px 5px 0px 5px;
+	text-align: center;
+}
+
+#footer p {
+	color: #89817f;
+	padding: 5px;
+}
+
+#footer p a {
+	color: #89817f;
+	border-bottom: 1px dotted #89817f;
+}
+
+#footer p a:hover {
+	color: #FFFFFF;
+	background-color: #575352;
+}
+
+/* POST ELEMENTS */
+
+#relatedPosts a {
+	display: block;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.comment {
+	border-top: 1px solid #DDDDDD;
+	border-bottom: 1px solid #DDDDDD;
+	padding-top: 10px;
+	margin-bottom: 10px;
+	padding-bottom: 35px;
+}
+
+.comment .date {
+	text-align: right;
+	margin: 0;
+	padding: 3px 0px;
+}
+.comment .author {
+	margin: 0;
+	text-align: left;
+	padding-top: 3px;
+	margin: 10px 0px 10px 0px;
+}
+
+.self {
+	background-color: #F5F5F5;
+}
+
+.comment .gravatar {
+	float: right;
+	margin: 5px 5px 5px 5px;
+}
+
+.comment .gravatar img {
+	height: 80px;
+}
+
+.comment .content {
+	min-height: 85px;
+	margin: 5px 0 0 5px;
+}
+.commentForm {
+	padding: 5px;
+}
+
+.commentForm label {
+	float: left;
+	display: block;
+	width: 80px;
+}
+
+.commentForm input {
+	width: 345px;
+}
+
+.commentForm textarea {
+	width: 100%;
+	height: 150px;
+}
+
+/*----------------------------
+					Archive
+----------------------------*/
+
+#archive {
+	padding: 10px;
+}
+
+#archive h1 {
+	margin: 0;
+	padding-bottom: 9px;
+}
+
+#archive h2 {
+	border-bottom: 1px solid silver;
+	padding-bottom: 4px;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+#archive h2 img {
+	margin-right: 3px;
+}
+
+#archive ul {
+	list-style-type: square;
+	margin: 0 10px;
+	padding: 10px;
+}
+
+#archive ul li {
+	margin-right: 20px;
+}
+
+#archive table{
+	border-collapse: collapse;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+
+#archive table td, #archive table th{
+	text-align:left;
+}
+
+#archive table td{
+	text-align:left;
+	border-bottom: 1px solid #D8D8D8;
+	padding: 2px 0;
+}
+
+#archive .comments{
+	text-align: center;
+	display: none;
+}
+
+#archive .rating{
+	text-align: center;
+	display: none;
+}
+
+/*----------------------------
+				Contact page
+----------------------------*/
+
+#contact {
+	background: white;
+	padding: 10px;
+}
+
+#contact h1 {
+	margin-top: 0;
+}
+
+#contact label {
+	display: block;
+	padding-top: 5px;
+}
+
+#contact input.field {
+	width: 200px;
+}
+
+#contact textarea {
+	display: block;
+	overflow: auto;
+	width: 75%;
+	height: 150px;
+	margin: 0;
+}
+
+/*----------------------------
+				Search page
+----------------------------*/
+
+.searchresult{
+	margin-bottom: 20px;
+}
+
+.searchresult a{
+	font-weight: bold;
+}
+
+.searchresult span.text{
+	clear: both;
+	display: block;
+	margin: 3px 0;
+}
+
+.searchresult span.type{
+	display: block;
+}
+
+.searchresult span.url{
+	color: Gray;
+}
+
+.searchpage ul.paging{
+ list-style-type: none;
+ margin:0px;
+ margin-bottom: 20px;
+ padding:0px;
+}
+
+.searchpage ul.paging li{
+ display: inline;
+ border: 1px solid gray; 
+ background: #f1f1f1;
+ margin-right: 5px;
+}
+
+.searchpage ul.paging li a{
+ padding: 5px 8px;
+}
+
+.searchpage ul.paging li.active{
+ background: #f1f1f1;
+ border: 1px solid black;
+}
+
+/*----------------------------
+			Syntax highlighter
+----------------------------*/
+
+.code
+{
+	font-size: 12px;
+	color: black;
+	font-family: Consolas, "Courier New", Courier, Monospace;
+	background-color: #F1F1F1;
+  line-height: normal;
+}
+
+.code p{
+	padding: 5px;
+}
+
+.code .rem { color: #008000; }
+
+.code .kwrd { color: #0000ff; }
+
+.code .str { color: #006080; }
+
+.code .op { color: #0000c0; }
+
+.code .preproc { color: #0000ff; }
+
+.code .asp { background-color: #ffff00; }
+
+.code .html { color: #800000; }
+
+.code .attr { color: #ff0000; }
+
+.code .alt {	background-color: #f4f4f4; }
+
+.code .lnum { color: #606060;}

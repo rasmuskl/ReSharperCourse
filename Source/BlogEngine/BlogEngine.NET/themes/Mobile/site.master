@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="MobileSite" %>
+<%@ Register Src="~/admin/menu.ascx" TagName="menu" TagPrefix="uc1" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server" profile="http://gmpg.org/xfn/11">
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <link rel="shortcut icon" href="~/pics/blogengine.ico" type="image/x-icon"/>
+</head>
+
+<body>
+  <form runat="server">
+    <div id="header">
+      <h3><%=BlogSettings.Instance.Name %></h3>
+      <p><%=BlogSettings.Instance.Description %></p>
+    </div>
+
+    <div id="menu">
+      <a href="<%=Utils.RelativeWebRoot%>default.aspx">Home</a> |
+      <a href="<%=Utils.RelativeWebRoot%>archive.aspx">Archive</a> |
+      <a href="<%=Utils.RelativeWebRoot%>contact.aspx">Contact</a> |
+      <a href="<%=Utils.FeedUrl %>">Feed</a> 
+      <% if (Utils.IsMobile)
+         { %>
+       | <blog:MobileThemeSwitch runat="server" />
+      <%
+         }
+      %>
+    </div>
+	  
+    <div id="content">
+      <blog:SearchOnSearch ID="SearchOnSearch1" runat="server" MaxResults="3" Headline="You searched for" Text="Here are some results for the search term on this website" />
+      <asp:ContentPlaceHolder ID="cphBody" runat="server" />
+    </div>
+    
+    <div id="footer">
+	    <p>Powered by <a href="http://www.dotnetblogengine.net/" target="_blank">BlogEngine.NET</a> <%=BlogSettings.Instance.Version() %> | 
+        Original Design by <a href="http://smallpark.org">SmallPark</a>, Adapted by <a href="http://www.nyveldt.com/blog/">RazorAnt</a></p>
+    </div>
+  </form>
+</body>
+</html>

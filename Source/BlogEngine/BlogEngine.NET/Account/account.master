@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="account.master.cs" Inherits="Account.AccountMasterPage" %>
+<%@ Import Namespace="BlogEngine.Core" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title>Account Login</title>
+    <meta name="description" content="Account Login Membership User Password" />
+    <link href="account.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../Scripts/jQuery/01-jquery.js"></script>
+    <script type="text/javascript" src="account.js"></script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <img alt="BlogEngine.net" src="../pics/be-logo.jpg" />
+            </div>
+            <div class="loginDisplay">
+                <a href="<%= Utils.RelativeWebRoot %>default.aspx"><%=Resources.labels.returnToBlog %></a>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="main">
+            <div id="StatusBox">
+                <div id="AdminStatus" runat="server" style="display:none"></div>
+            </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
+

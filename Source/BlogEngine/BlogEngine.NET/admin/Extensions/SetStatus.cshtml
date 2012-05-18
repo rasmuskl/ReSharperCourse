@@ -1,0 +1,34 @@
+﻿@{
+   if(Request.QueryString["ext"] != null && Request.QueryString["act"] != null)
+   {
+       var ext = Request.QueryString["ext"];
+       var act = bool.Parse(Request.QueryString["act"]);
+
+       var rfr = Request.UrlReferrer.ToString();
+       var rdr = "default.cshtml";
+       
+       if(!string.IsNullOrEmpty(rfr))
+       {
+           if (rfr.Contains("enb=True")) 
+           { 
+               rfr = rfr.Replace("enb=True", "enb=False");
+               rdr = rfr;
+           }
+           else
+           {
+               if (rfr.Contains("enb=False")) 
+               { 
+                   rfr = rfr.Replace("enb=False", "enb=True");
+                   rdr = rfr;
+               }
+           }
+       }
+       
+       if(!string.IsNullOrEmpty(ext))
+       {
+           BlogEngine.Core.Web.Extensions.ExtensionManager.ChangeStatus(ext, act);
+
+           Response.Redirect(rdr);    
+       }    
+   } 
+}

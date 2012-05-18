@@ -1,0 +1,64 @@
+﻿@using BlogEngine.Core
+@using BlogEngine.Core.Web.Extensions
+
+@{
+    Page.Title = Resources.labels.dashboard;
+    Layout = "_Layout.cshtml";
+}
+
+<div class="content-box-outer">
+    <div class="content-widgets-box-full">
+        <div id="stats" style="width:24%;">
+            <div class="dashboardStats">
+                <div class="rounded">
+                    <h2>@Resources.labels.stats</h2>
+                    <ul>
+                        @Helpers.DashboardHelper.GetStats()
+                    </ul>
+                </div>
+            </div>
+            <div class="dashboardWidget rounded">
+                <div class="rounded">
+                    <h2>@Resources.labels.trash</h2>
+                    <a class="viewAction" href="Trash.aspx">@Resources.labels.viewAll</a> &nbsp;&nbsp;
+                    <a class="deleteAction" href="#" onclick="return ProcessTrash('Purge', 'All');">@Resources.labels.emptyTrash</a>
+                </div>
+            </div>
+        </div>
+        <div id="widgets" style="width:38%;">
+            <div class="dashboardWidget">
+                <div class="rounded">
+                    <h2>@Resources.labels.draftPosts<a class="addNew" href="Posts/Add_entry.aspx">@Resources.labels.writeNewPost</a></h2>
+                    <ul id="DraftPosts">
+                        @Helpers.DashboardHelper.GetDraftPosts()
+                    </ul>
+                </div>
+            </div>
+            <div class="dashboardWidget rounded">
+                <div class="rounded">
+                    <h2>@Resources.labels.draftPages<a class="addNew" href="Pages/EditPage.aspx">@Resources.labels.addNewPage</a></h2>
+                    <ul id="DraftPages">
+                        @Helpers.DashboardHelper.GetDraftPages()
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="dashboardWidget rounded">
+                <div class="rounded">
+                    @Helpers.DashboardHelper.GetLatestComments()
+                </div>
+            </div>
+            
+            <div class="clear"></div>
+        </div>
+        <div id="widgets2" style="width:38%;">
+            <div class="dashboardWidget rounded">
+                <div class="rounded">
+                    <h2>@Resources.labels.latestFromTheGallery</h2>
+                    @Helpers.DashboardHelper.GetLatestPackages()
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

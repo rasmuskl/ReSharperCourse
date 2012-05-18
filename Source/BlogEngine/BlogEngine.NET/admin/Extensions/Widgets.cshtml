@@ -1,0 +1,106 @@
+﻿@using BlogEngine.Core
+@using BlogEngine.Core.Packaging
+
+@{
+    Page.Title = Resources.labels.themes;
+    Layout = "~/admin/_Layout.cshtml";
+
+    var loaderSrc = Path.Combine(BlogEngine.Core.Utils.ApplicationRelativeWebRoot, "pics/ajax-loader.gif");
+    var canManagePackages = BlogEngine.Core.Blog.CurrentInstance.IsPrimary;
+    var installedPackages = PackageRepository.LocalPackages(Constants.Widget);
+}
+
+ <script type="text/javascript">
+     $(document).ready(function () {
+         $('.loader2').hide();
+     });
+</script>
+
+<div class="content-box-outer">
+    <div class="content-box-full">
+        
+        <div class="TabRow">
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab" onclick="location.href='default.cshtml'">Extensions</span>
+            </div>
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab" onclick="location.href='Themes.cshtml'">@Resources.labels.themes</span>
+            </div>
+            <div class="AlternatePagesDivder"></div>
+            <div class="AlternatePageDivTab">
+	            <span class="AlternatePageTab AlternatePageTabSelected">Widgets</span>
+            </div>
+            <div class="TabRight">
+                @Resources.labels.installed
+                @if (canManagePackages)
+                {
+                    <span>|</span> <a href="WidgetGallery.cshtml">@Resources.labels.gallery</a>
+                }
+            </div>
+        </div>
+
+        <div>
+            <h2 class="gallery-hdr">Installed Widgets</h2>   
+            <div class="installed-widgets">
+                <ul class="gallery">
+                @foreach (var wdg in installedPackages)
+                {
+                    <li id="@wdg.Id">
+                        <div class="Widget">
+                            <div class="pkg-hdr"> 
+                                <div class="pkg-img">
+                                    <img src="@wdg.IconUrl" class="thumbnail" alt="Widget" />
+                                </div>
+                                <div class="prop-hdr">
+                                    @if (!string.IsNullOrWhiteSpace(wdg.LocalVersion) && wdg.Location == "I")
+                                    {
+                                        <a href="@wdg.PackageUrl" target="_new">
+                                            <h2>@wdg.Id</h2>
+                                        </a>
+                                        <p>Version: @wdg.LocalVersion</p>
+                                    }
+                                    else
+                                    {
+                                        <h2>@wdg.Id</h2>
+                                    }
+                                    @if (!string.IsNullOrWhiteSpace(wdg.Authors))
+                                    {
+                                        if(wdg.Website != null){
+                                            <p class="website">@Resources.labels.author: <a target="_new" href="@wdg.Website">@wdg.Authors</a></p> 
+                                        }
+                                        else{
+                                            <p>@Resources.labels.author: @wdg.Authors</p> 
+                                        }
+                                    }
+                                    else
+                                    {
+                                    <p>@Resources.labels.author: unknown</p>
+                                    }
+                                    @if (Blog.CurrentInstance.IsPrimary && @wdg.Location == "I")
+                                    {
+                                        if (Gallery.ConvertVersion(wdg.LocalVersion) < Gallery.ConvertVersion(wdg.OnlineVersion))
+                                        {
+                                        <p id="upd-@wdg.Id" class="package-update local">
+                                            <a href="" onclick="UpdatePackage('@wdg.Id'); return false;">@Resources.labels.update</a>
+                                            <img class="loader2" src="@loaderSrc" alt="loader" />
+                                        </p>
+                                        }
+                                        <p id="del-@wdg.Id" class="package-delete">
+                                            <a href="" class="deleteAction" onclick="UninstallPackage('@wdg.Id'); return false;">@Resources.labels.delete</a>
+                                            <img class="loader2" src="@loaderSrc" alt="loader" />
+                                        </p>  
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+                </ul>
+            </div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

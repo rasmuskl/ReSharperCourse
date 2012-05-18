@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="default.aspx" title="Blog Engine" description="">
+    <siteMapNode url="~/admin/default.cshtml" title="dashboard" description="" rights="AccessAdminPages" />
+    <siteMapNode url="~/admin/Blogs.aspx" title="blogs" description="" rights="AccessAdminPages" primaryBlogInstanceOnly="true" />
+    <siteMapNode url="~/admin/Posts/Posts.aspx" title="posts" description="" rightsAuthorizationCheck="HasAny" rights="CreateNewPosts, EditOwnPosts, EditOtherUsersPosts, PublishOwnPosts, PublishOtherUsersPosts" />
+    <siteMapNode url="~/admin/Comments/Approved.aspx" title="comments" description="" rightsAuthorizationCheck="HasAny" rights="ModerateComments" />
+    <siteMapNode url="~/admin/Pages/Pages.aspx" title="pages" description="" rightsAuthorizationCheck="HasAny" rights="CreateNewPages, EditOwnPages, EditOtherUsersPages, PublishOwnPages, PublishOtherUsersPages" />
+    <siteMapNode url="~/admin/Tracking/Pingbacks.aspx" title="tracking" description="" rights="AccessAdminPages" />
+    <siteMapNode url="~/admin/Widgets/Blogroll.aspx" title="controls" description="" rights="AccessAdminPages" />
+    <siteMapNode url="~/admin/Extensions/default.cshtml" title="appearance" description="" rights="AccessAdminPages" />
+    <siteMapNode url="~/admin/Users/Users.aspx" title="users" description="" rights="EditOtherUsers" />
+    <siteMapNode url="~/admin/Settings/Main.aspx" title="settings" rights="AccessAdminSettingsPages" description="" />
+  </siteMapNode>
+</siteMap>

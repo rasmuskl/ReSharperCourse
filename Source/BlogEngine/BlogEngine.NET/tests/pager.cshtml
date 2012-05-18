@@ -1,0 +1,55 @@
+@using QuixoteWeb;
+@using BlogEngine.Core.Web.Navigation
+
+@{
+    Layout = "_layout.cshtml";
+    int size = 10;
+    int cnt = 33;
+}
+
+@TheFollowing.Describes("Tests for generic pager (Core.Web.Navigation.Pager)")
+
+<div class="left-padded"><a href="default.cshtml"><span class="go-back"></span></a></div>
+
+@It.Should("set page to 1 when page is negative", () => {
+    
+    IPager p = new Pager(-9, size, cnt);  
+    return (p.First == 0 && p.Previous == 0 && p.From == 1 && p.To == 10 && p.Next == 2 && p.Last == 4).ShouldBeTrue();
+})
+
+@It.Should("set page to 1 when page is 0 (not set)", () => {
+    
+    IPager p = new Pager(0, size, cnt);  
+    return (p.First == 0 && p.Previous == 0 && p.From == 1 && p.To == 10 && p.Next == 2 && p.Last == 4).ShouldBeTrue();
+})
+
+@It.Should("set page to 1 when page is larger then last page", () => {
+    
+    IPager p = new Pager(999, size, cnt);  
+    return (p.First == 0 && p.Previous == 0 && p.From == 1 && p.To == 10 && p.Next == 2 && p.Last == 4).ShouldBeTrue();
+})
+
+@It.Should("have no first or previous links when on page 1", () => {
+    
+    IPager p = new Pager(1, size, cnt);  
+    return (p.First == 0 && p.Previous == 0 && p.From == 1 && p.To == 10 && p.Next == 2 && p.Last == 4).ShouldBeTrue();
+})
+
+@It.Should("have next and previous links when page > 1 and < last page", () => {
+    
+    IPager p = new Pager(2, size, cnt);
+    bool r1 = (p.First == 1 && p.Previous == 1 && p.From == 11 && p.To == 20 && p.Next == 3 && p.Last == 4);
+        
+    p = new Pager(3, size, cnt);
+    bool r2 = (p.First == 1 && p.Previous == 2 && p.From == 21 && p.To == 30 && p.Next == 4 && p.Last == 4);
+        
+    return (r1 && r2).ShouldBeTrue();
+})
+
+@It.Should("have no next or last links on the last page", () => {
+    
+    IPager p = new Pager(4, size, cnt);  
+    return (p.First == 1 && p.Previous == 3 && p.From == 31 && p.To == 33 && p.Next == 0 && p.Last == 0).ShouldBeTrue();
+})
+
+<div class="left-padded"><a href="default.cshtml"><span class="go-back"></span></a></div>

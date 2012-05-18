@@ -1,0 +1,14 @@
+﻿@using BlogEngine.Core
+
+@helper PageMenu()
+{
+    var menu = new BlogEngine.Core.Web.Controls.PageMenu();
+
+    menu.Home = Resources.labels.home;
+    menu.Contact = Resources.labels.contact;
+    menu.Archive = Resources.labels.archive;
+    menu.Logon = Resources.labels.login;
+    menu.Logoff = Resources.labels.logoff;
+    
+    __razor_helper_writer.Write(menu.Html);
+}
