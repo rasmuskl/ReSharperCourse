@@ -21,7 +21,7 @@
 
 @helper FocusCodeWindow2()
 {
-    @Scaffold("Focus Code Window (more stable)", "A", "W, 1")
+    @Scaffold("Focus Code Window (more stable)", "A", "W", ", <kbd>1</kbd>")
 }
 
 @helper GoToType()
@@ -51,14 +51,14 @@
 }
 
 
-@helper Scaffold(string description, string modifiers, string key)
+@helper Scaffold(string description, string modifiers, string key, string extra = "")
 {
     <tr>
         <td>
             @description
         </td>
         <td>
-            @Keys.Shortcut(modifiers, key)
+            @Keys.Shortcut(modifiers, key) @(new HtmlString(extra))
         </td>
     </tr>
 }
