@@ -41,3 +41,9 @@ span.inline-code {
 .primary-shortcuts td {
     padding: 5px 10px;
 }
+
+.example {
+    background-color: #fefefe;
+    border: 1px dashed #ccc;
+    padding: 5px 25px;
+}

@@ -319,9 +319,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="API\MetaWeblog\MetaWeblog.cd" />
     <None Include="key.snk" />
-    <None Include="Ping\Ping.cd" />
     <None Include="Service References\GalleryServer\service.edmx" />
   </ItemGroup>
   <ItemGroup>

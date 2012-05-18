@@ -101,64 +101,8 @@
                 WidgetZone.PreloadWidgetsAsync("be_WIDGET_ZONE"); 
                 Utils.LoadExtensions();
 
-                Init_BundleTable();
-                
                 _initializedAlready = true;
             }
-        }
-
-        static void Init_BundleTable()
-        {
-            BundleTable.Bundles.EnableDefaultBundles();
-            BundleTable.Bundles.Clear();
-
-            var jsTransform = new JsMinify();
-            var cssTransform = new CssMinify();
-            
-            // scripts added to header and NOT deferred
-            var hdrjs = new Bundle("~/Scripts/Header/js", jsTransform);
-            hdrjs.AddDirectory("~/Scripts/Header", "*.js", false);
-            BundleTable.Bundles.Add(hdrjs);
-            
-            // for anonymous users
-            var css = new Bundle("~/Styles/css", cssTransform);
-            css.AddDirectory("~/Styles", "*.css", false);
-            BundleTable.Bundles.Add(css);
-
-            var js = new Bundle("~/Scripts/js", jsTransform);
-            js.AddDirectory("~/Scripts", "*.js", false);
-            BundleTable.Bundles.Add(js);
-
-            // for authenticated users
-            var cssauth = new Bundle("~/Styles/cssauth", cssTransform);
-            cssauth.AddDirectory("~/Styles", "*.css", false);
-            cssauth.AddFile("~/Modules/QuickNotes/Qnotes.css");
-            BundleTable.Bundles.Add(cssauth);
-
-            var jsauth = new Bundle("~/Scripts/jsauth");
-            jsauth.AddDirectory("~/Scripts", "*.js", false); 
-            jsauth.AddFile("~/admin/widget.js");
-            jsauth.AddFile("~/Modules/QuickNotes/Qnotes.js");   
-            BundleTable.Bundles.Add(jsauth);
-            
-            // administration
-            var cssadmin = new Bundle("~/admin/css", cssTransform);
-            cssadmin.AddFile("~/admin/style.css");
-            cssadmin.AddFile("~/admin/colorbox.css");
-            cssadmin.AddFile("~/admin/tipsy.css");
-            BundleTable.Bundles.Add(cssadmin);
-            
-            var jsadmin = new Bundle("~/admin/js", jsTransform);
-            jsadmin.AddDirectory("~/Scripts/jQuery", "*.js", false);
-            jsadmin.AddFile("~/admin/admin.js");
-            BundleTable.Bundles.Add(jsadmin);
-
-            // syntax highlighter           
-            var jshighlighter = new Bundle("~/Scripts/highlighter", jsTransform);
-            jshighlighter.AddFile("~/Scripts/syntaxhighlighter/shCore.js");
-            jshighlighter.AddFile("~/Scripts/syntaxhighlighter/shAutoloader.js");
-            jshighlighter.AddFile("~/Scripts/syntaxhighlighter/shInit.js");
-            BundleTable.Bundles.Add(jshighlighter);
         }
     }
     
