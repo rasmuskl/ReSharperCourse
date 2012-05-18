@@ -48,6 +48,18 @@ span.inline-code {
     padding: 5px 25px;
 }
 
+.tip {
+    background-color: #fefefe;
+    border: 1px dashed #ccc;
+    padding: 5px 12px;
+}
+
+.hint {
+    background-color: #fefefe;
+    border: 1px dashed #ccc;
+    padding: 5px 12px;
+}
+
 kbd
 {
     -moz-border-radius:3px;

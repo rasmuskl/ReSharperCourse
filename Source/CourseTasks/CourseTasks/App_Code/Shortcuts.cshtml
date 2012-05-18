@@ -21,7 +21,7 @@
 
 @helper FocusCodeWindow2()
 {
-    @Scaffold("Focus Code Window (more stable)", "A", "W", ", <kbd>1</kbd>")
+    @ScaffoldChord("Focus Code Window (more stable)", "A", "W", "", "1")
 }
 
 @helper GoToType()
@@ -80,19 +80,63 @@
     @Scaffold("Go to previous class member", "A", "Up")
 }
 
+@helper ShowTypeHierarchy()
+{
+    @ScaffoldChord("Show type hierarchy", "C", "E", "C", "H")
+}
+
 @helper InspectThis()
 {
     @Scaffold("Inspect this", "ACS", "A")
 }
 
-@helper Scaffold(string description, string modifiers, string key, string extra = "")
+@helper CloseCurrentFile()
+{
+    @Scaffold("Close current file", "C", "F4")
+}
+
+@helper GoBack()
+{
+    @Scaffold("Go back (Visual Studio)", "C", "-")
+}
+
+@helper GoToDerived()
+{
+    @Scaffold("Go to derived", "A", "End")
+}
+
+@helper GoToBase()
+{
+    @Scaffold("Go to base", "A", "Home")
+}
+
+@helper GoToDeclaration()
+{
+    @Scaffold("Go to declaration", "", "F12")
+}
+
+
+
+@helper Scaffold(string description, string modifiers, string key)
 {
     <tr>
         <td>
             @description
         </td>
         <td>
-            @Keys.Shortcut(modifiers, key) @(new HtmlString(extra))
+            @Keys.Shortcut(modifiers, key)
+        </td>
+    </tr>
+}
+
+@helper ScaffoldChord(string description, string modifiers, string key, string modifiers2, string key2)
+{
+    <tr>
+        <td>
+            @description
+        </td>
+        <td>
+            @Keys.Shortcut(modifiers, key),@Keys.Shortcut(modifiers2, key2)
         </td>
     </tr>
 }

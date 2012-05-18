@@ -7,7 +7,7 @@ namespace Rebus
     /// Implement this in order to delegate the instantiation work to your
     /// IoC container. Seriously, do it.
     /// </summary>
-    public interface IActivateHandlers
+    public interface IActivateHandlers  
     {
         /// <summary>
         /// Should get a sequence of handlers where each handler implements
