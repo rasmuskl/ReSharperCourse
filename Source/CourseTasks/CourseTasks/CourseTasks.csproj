@@ -95,8 +95,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Code\Shortcuts.cshtml" />
+    <Content Include="Views\Home\FindUsages.cshtml" />
     <None Include="Views\Home\MoveCode.cshtml" />
     <Content Include="Views\Home\NavigateTo.cshtml" />
+    <Content Include="Views\Home\NavigateHierarchy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Code\Code.cshtml" />
