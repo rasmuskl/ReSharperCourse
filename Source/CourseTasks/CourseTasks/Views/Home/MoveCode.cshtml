@@ -25,6 +25,19 @@
         </ul>        
     </p>
     
-    @Keys.Shortcut("ACS") + (@Keys.Up() or @Keys.Down())
+    <div class="shortcuts">
+        <h3>Primary shortcuts</h3>
+        <table>
+            @Shortcuts.MoveCodeUp()
+            @Shortcuts.MoveCodeDown()
+            @Shortcuts.MoveCodeIn()
+            @Shortcuts.MoveCodeOut()
+        </table>
+        <h3>Supporting shortcuts</h3>
+        <table>
+            @Shortcuts.NavigateToNextClassMember()
+            @Shortcuts.NavigateToPrevClassMember()
+        </table>
+    </div>
 
 </div>

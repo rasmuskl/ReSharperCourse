@@ -50,6 +50,40 @@
     @Scaffold("Open menu underlined with <X>", "A", "<X>")
 }
 
+@helper MoveCodeUp() 
+{
+    @Scaffold("Move code up", "ACS", "Up")
+}
+
+@helper MoveCodeDown() 
+{
+    @Scaffold("Move code down", "ACS", "Down")
+}
+
+@helper MoveCodeIn() 
+{
+    @Scaffold("Move code in", "ACS", "Right")
+}
+
+@helper MoveCodeOut() 
+{
+    @Scaffold("Move code out", "ACS", "Left")
+}
+
+@helper NavigateToNextClassMember()
+{
+    @Scaffold("Go to next class member", "A", "Down")
+}
+
+@helper NavigateToPrevClassMember()
+{
+    @Scaffold("Go to previous class member", "A", "Up")
+}
+
+@helper InspectThis()
+{
+    @Scaffold("Inspect this", "ACS", "A")
+}
 
 @helper Scaffold(string description, string modifiers, string key, string extra = "")
 {

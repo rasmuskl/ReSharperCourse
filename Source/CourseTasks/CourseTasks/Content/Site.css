@@ -33,12 +33,12 @@ span.inline-code {
     margin: 1em 0px;
 }
 
-.primary-shortcuts table, .primary-shortcuts td {
+.shortcuts table, .shortcuts td {
     border: 1px solid #ccc;
     border-collapse: collapse;
 }
 
-.primary-shortcuts td {
+.shortcuts td {
     padding: 5px 10px;
 }
 
