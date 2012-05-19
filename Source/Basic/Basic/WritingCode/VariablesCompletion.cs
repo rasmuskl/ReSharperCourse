@@ -42,9 +42,6 @@ namespace Basic.WritingCode
 
         public void IntroduceVariableImportCompletionCombo()
         {
-            // new HybridDictionary()
-            // new BlockingCollection<ConcurrentQueue<Guid>>()
-            // CompressionMode.Compress
         }
     }
 }
