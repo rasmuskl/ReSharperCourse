@@ -180,9 +180,19 @@
     @ScaffoldChord("Refactor: Inline variable", "C", "R", "C", "I")
 }
 
+@helper RefactorRename()
+{
+    @ScaffoldChord("Refactor: Rename", "C", "R", "C", "R")
+}
+
 @helper GenerateFileSolutionExplorer()
 {
     @Scaffold("Generate file (Solution Explorer)", "A", "Ins")
+}
+
+@helper RefactorMoveToFolder()
+{
+    @ScaffoldChord("Refactor: Move to folder (Solution Explorer)", "C", "R", "C", "O")
 }
 
 @helper GenerateCode()

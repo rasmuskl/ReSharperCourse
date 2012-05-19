@@ -98,12 +98,15 @@
     <Content Include="Views\Home\FindUsages.cshtml" />
     <Content Include="Views\Home\FirstTaskRevisited.cshtml" />
     <Content Include="Views\Home\CompletionModesIntroduceInline.cshtml" />
+    <Content Include="Views\Home\GenerateCode.cshtml" />
+    <Content Include="Views\Home\ExtractInlineMethod.cshtml" />
     <None Include="Views\Home\MoveCode.cshtml" />
     <Content Include="Views\Home\NavigateTo.cshtml" />
     <Content Include="Views\Home\NavigateHierarchy.cshtml" />
     <Content Include="Views\Home\QuickFix.cshtml" />
     <Content Include="Views\Home\TaskTemplate.cshtml" />
     <Content Include="Views\Home\SolutionLevel.cshtml" />
+    <Content Include="Views\Home\Rename.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Code\Code.cshtml" />
