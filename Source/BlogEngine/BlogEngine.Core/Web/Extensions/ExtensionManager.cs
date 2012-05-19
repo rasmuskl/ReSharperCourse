@@ -70,8 +70,6 @@
             foreach (var x in extensions.Where(x => x.Key == extension))
             {
                 x.Value.Enabled = enabled;
-                var xs = new DataStore.ExtensionSettings(x.Key);
-                xs.SaveSettings(x.Value);
                 SaveToCache();
 
                 var configPath = string.Format("{0}Web.Config", HostingEnvironment.ApplicationPhysicalPath);
@@ -294,12 +292,6 @@
         /// </returns>
         public static bool SaveToStorage()
         {
-            foreach (var ext in extensions)
-            {
-                var xs = new DataStore.ExtensionSettings(ext.Key);
-                xs.SaveSettings(ext.Value);
-            }
-
             return true;
         }
 
@@ -314,8 +306,6 @@
         /// </returns>
         public static bool SaveToStorage(ManagedExtension ext)
         {
-            var xs = new DataStore.ExtensionSettings(ext.Name);
-            xs.SaveSettings(ext);
             return true;
         }
 

@@ -115,6 +115,28 @@
     @Scaffold("Go to declaration", "", "F12")
 }
 
+@helper FindUsages()
+{
+    @Scaffold("Find usages", "S", "F12")
+}
+
+@helper HighlightUsages()
+{
+    @Scaffold("Highlight usages", "AS", "F11")
+}
+
+@helper NavigateToNextUsage()
+{
+    @Scaffold("Go to next usage", "AC", "PageDown")
+}
+
+@helper NavigateToPrevUsage()
+{
+    @Scaffold("Go to previous usage", "AC", "PageUp")
+}
+
+
+
 
 
 @helper Scaffold(string description, string modifiers, string key)

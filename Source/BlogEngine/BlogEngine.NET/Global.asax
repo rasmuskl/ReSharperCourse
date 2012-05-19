@@ -3,7 +3,6 @@
 <%@ Import Namespace="System.Globalization" %>
 <%@ Import Namespace="BlogEngine.Core" %>
 <%@ Import Namespace="App_Code.Controls" %>
-<%@ Import Namespace="System.Web.Optimization" %>
 
 <script RunAt="server">
   

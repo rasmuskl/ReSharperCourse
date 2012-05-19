@@ -1,32 +1,53 @@
 ﻿<div class="task">
     <h2>Find Usages</h2>
     
-    <p>Possible method: BlogEngine UrlRewrite.ContextBeginRequest</p>
-    <p>Possible method: BlogEngine Pager.ctor</p>
-    <p>Possible method: BlogEngine CommentHandlers.*</p>
-
     <p>Open the @Code.Sln("BlogEngine") solution.</p>
     
     <p>
+        Navigate to the @Code.Ref("BlogEngine.Core.Web.Navigation.Pager") class and look at the @Code.Ref("Pager") constructor (note: there are more than 1 Pager class)
+        
+        <ol>
+            <li>Try to reason about what happens to the @Code.Ref("page") parameter within the constructor</li>
+            <li>Try again with [Find usages]</li>
+            <li>Try again with [Highlight usages]</li>
+            <li>What works better? Nothing, [Find usages] or [Highlight usages]?</li>
+        </ol>
+
+        Navigate to the @Code.Ref("BlogEngine.Core.Web.Navigation.Pager") class
+        
+        <ol start="5">
+            <li>Try to reason about who calls the @Code.Ref("Pager") constructor</li>
+            <li>Try again with [Highlight usages]</li>
+            <li>Try again with [Find usages]</li>
+            <li>What works better? Nothing, [Find usages] or [Highlight usages]?</li>
+        </ol>
+
         Navigate to the @Code.Ref("ContextBeginRequest") method in the @Code.Ref("UrlRewrite") class.
         Using [Highlight usages] and [Navigate to next usage] figure out
         
-        <ol>
+        <ol start="9">
             <li>What is the last line that the @Code.Ref("path") local variable is used in?</li>
             <li>What is the last line that the @Code.Ref("url") local variable is used in?</li>
+            <li>Would the 2 previous tasks be easier with [Find usages]?</li>
+        </ol>
+
+        Optional extras
+
+        <ol start="12">
+            <li>Where is the @Code.Ref("DumpProvider") method from the @Code.Ref("FileSystemUtilities") class used?</li>
+            <li>Which .aspx files use the @Code.Ref("CheckRightsForAdminCommentsPages") method in the @Code.Ref("WebUtils") class?</li>
+            <li>From which .aspx files can the @Code.Ref("SaveToDatastore") method of the @Code.Ref("XmlBlogProvider") class be invoked? (multiple [Find usages])</li>
         </ol>
 
     </p>
-
-    <div class="example">
-        <h3>Example - X</h3>
-        <p>
-        </p>        
-    </div>
     
     <div class="shortcuts">
         <h3>Primary shortcuts</h3>
         <table>
+            @Shortcuts.FindUsages()
+            @Shortcuts.HighlightUsages()
+            @Shortcuts.NavigateToNextUsage()
+            @Shortcuts.NavigateToPrevUsage()
         </table>
     </div>
 
