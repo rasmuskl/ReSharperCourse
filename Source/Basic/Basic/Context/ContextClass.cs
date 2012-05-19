@@ -9,7 +9,7 @@ namespace Basic.Context.Misc
         private int quantity;
         private string _name;
 
-        public ContextClass(int quantity, string name)
+        public ContextClass(int quantity, string name, int max)
         {
             this.quantity = quantity;
             _name = name;

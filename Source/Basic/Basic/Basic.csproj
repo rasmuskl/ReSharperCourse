@@ -44,9 +44,12 @@
     <Compile Include="MoveCode\OutOfOrderMethods.cs" />
     <Compile Include="Rename\H.cs" />
     <Compile Include="Support\Proc\DataProcessor.cs" />
-    <Compile Include="WritingCode\VariablesCompletion.cs" />
+    <Compile Include="InlineCompletion\VariablesCompletion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Support\SecurityClassification.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Generate\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

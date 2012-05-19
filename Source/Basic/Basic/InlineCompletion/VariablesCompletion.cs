@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Basic.WritingCode
+namespace Basic.InlineCompletion
 {
     public class VariablesCompletion
     {
