@@ -180,6 +180,21 @@
     @ScaffoldChord("Refactor: Inline variable", "C", "R", "C", "I")
 }
 
+@helper GenerateFileSolutionExplorer()
+{
+    @Scaffold("Generate file (Solution Explorer)", "A", "Ins")
+}
+
+@helper GenerateCode()
+{
+    @Scaffold("Generate code", "A", "Ins")
+}
+
+@helper GenerateFileCodeEditor()
+{
+    @Scaffold("Generate file (Code Editor)", "AC", "Ins")
+}
+
 @helper Scaffold(string description, string modifiers, string key)
 {
     <tr>

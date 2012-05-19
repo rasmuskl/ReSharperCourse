@@ -103,6 +103,7 @@
     <Content Include="Views\Home\NavigateHierarchy.cshtml" />
     <Content Include="Views\Home\QuickFix.cshtml" />
     <Content Include="Views\Home\TaskTemplate.cshtml" />
+    <Content Include="Views\Home\SolutionLevel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Code\Code.cshtml" />
