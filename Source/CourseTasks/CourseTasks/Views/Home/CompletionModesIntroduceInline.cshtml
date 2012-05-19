@@ -31,13 +31,42 @@
             <li>Change the @Code.Ref("Console.WriteLine") call to output @Code.Ref("list.FirstOrDefault()") (extension method) instead of @Code.Ref("list") - using [Import completion] to import the @Code.Ref("System.Linq") namespace</li>
         </ol>
         
-        In the @Code.Ref("IntroduceVariableImportCompletionCombo") method:
+        <h4>Optional extras</h4>
+
+        In the @Code.Ref("IntroduceVariableImportCompletionCombo") method, find the shortest keysequence for writing the following statements using [Import completion] followed by [Introduce variable]. (see example below)
         
         <ol start="10">
-            <li></li>
+            <li>@Code.Ref("var dictionary = new HybridDictionary();")</li>
+            <li>@Code.Ref("var collection = new BlockingCollection<ConcurrentQueue<Guid>>();")</li>
+            <li>@Code.Ref("var compressionMode = CompressionMode.Compress;")</li>
         </ol>
 
     </p>
+    
+    <div class="example">
+        <h3>Example - Import/Introduce combo</h3>
+        
+        <p>
+            Combining [Import completion] and [Introduce variable]. Shortest key sequence for writing in a file where the @Code.Ref("System.Text") namespace is not imported:
+            
+            <ul>
+                <li>@Code.Ref("var stringBuilder = new StringBuilder();")</li>
+            </ul>
+            
+            would be:
+            
+            <ul>
+                <li>@Keys.Key("n")@Keys.Key("e")@Keys.Key("w")@Keys.Key("Space")</li>
+                <li>@Keys.Key("s")@Keys.Key("b")@Keys.Key("u")@Keys.Key("i") (matches <b>S</b>tring<b>Bui</b>lder)</li>
+                <li>@Keys.Shortcut("AS", "Space") (Activate Import completion)</li>
+                <li>@Keys.Key("(") (inserts auto-closing paren)</li>
+                <li>@Keys.Shortcut("C", "R"), @Keys.Shortcut("C", "V") (introduce variable)</li>
+                <li>@Keys.Enter() (picks <i>var</i> in type selector)</li>
+                <li>@Keys.Enter() (picks <i>stringBuilder</i> in name selector)</li>
+            </ul>
+        </p>
+
+    </div>
     
     <div class="shortcuts">
         <h3>Primary shortcuts</h3>
