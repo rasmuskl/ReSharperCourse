@@ -1,6 +1,6 @@
 using System;
 
-namespace Basic.CaretControl
+namespace Basic.MoveCode
 {
     public class OutOfOrderMethods
     {

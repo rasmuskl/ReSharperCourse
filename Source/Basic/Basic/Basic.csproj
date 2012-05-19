@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CaretControl\OutOfOrderMethods.cs" />
+    <Compile Include="Context\ContextClass.cs" />
+    <Compile Include="MoveCode\OutOfOrderMethods.cs" />
+    <Compile Include="Support\DataProcessor.cs" />
     <Compile Include="WritingCode\SimpleCombos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Support\SecurityClassification.cs" />

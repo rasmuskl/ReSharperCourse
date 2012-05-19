@@ -135,9 +135,30 @@
     @Scaffold("Go to previous usage", "AC", "PageUp")
 }
 
+@helper NavigateToNextSuggestion()
+{
+    @Scaffold("Go to next suggestion", "A", "PageDown")
+}
 
+@helper NavigateToPrevSuggestion()
+{
+    @Scaffold("Go to previous suggestion", "A", "PageUp")
+}
 
+@helper NavigateToNextError()
+{
+    @Scaffold("Go to next error", "AS", "PageDown")
+}
 
+@helper NavigateToPrevError()
+{
+    @Scaffold("Go to previous error", "AS", "PageUp")
+}
+
+@helper QuickFix()
+{
+    @Scaffold("Quick fix", "A", "Enter")
+}
 
 @helper Scaffold(string description, string modifiers, string key)
 {
