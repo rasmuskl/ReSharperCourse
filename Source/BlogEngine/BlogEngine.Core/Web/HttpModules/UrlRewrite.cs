@@ -67,7 +67,7 @@
         private static string GetUrlWithQueryString(HttpContext context)
         {
             return string.Format(
-                "{0}?{1}", context.Request.Path, context.Request.QueryString.ToString());
+                "{0}?{1}", context.Request.Path, context.Request.QueryString);
         }
 
         /// <summary>
@@ -137,8 +137,8 @@
                 context.Response.StatusCode = 301;
             }
 
-            url = url.Substring(0, url.IndexOf(BlogConfig.FileExtension));
-            var index = url.LastIndexOf("/") + 1;
+            url = url.Substring(0, url.IndexOf(BlogConfig.FileExtension, StringComparison.Ordinal));
+            var index = url.LastIndexOf("/", StringComparison.Ordinal) + 1;
             var title = url.Substring(index);
             return context.Server.HtmlEncode(title);
         }
@@ -190,13 +190,11 @@
         {
             var tag = ExtractTitle(context, url);
 
-            if (url.Contains("/FEED/")) {
-                context.RewritePath(string.Format("syndication.axd?tag={0}{1}", tag, GetQueryString(context)), false);
-            }
-            else {
-                context.RewritePath(
-                    string.Format("{0}?tag=/{1}{2}", Utils.ApplicationRelativeWebRoot, tag, GetQueryString(context)), false);
-            }
+            context.RewritePath(
+                url.Contains("/FEED/")
+                    ? string.Format("syndication.axd?tag={0}{1}", tag, GetQueryString(context))
+                    : string.Format("{0}?tag=/{1}{2}", Utils.ApplicationRelativeWebRoot, tag, GetQueryString(context)),
+                false);
         }
 
         /// <summary>
@@ -235,9 +233,8 @@
                 context.RewritePath(Utils.ApplicationRelativeWebRoot + path + page, false);
             }
             else {
-                string newUrl = url.Replace("Default.aspx", "default.aspx");  // fixes a casing oddity on Mono
                 int defaultStart = url.IndexOf("default.aspx", StringComparison.OrdinalIgnoreCase);
-                newUrl = Utils.ApplicationRelativeWebRoot + url.Substring(defaultStart);
+                string newUrl = Utils.ApplicationRelativeWebRoot + url.Substring(defaultStart);
 
                 context.RewritePath(newUrl);
             }
@@ -286,10 +283,7 @@
             }
 
             var q = GetQueryString(context);
-            if (q.Contains("id=", StringComparison.OrdinalIgnoreCase))
-                q = string.Format("{0}post.aspx?{1}", Utils.ApplicationRelativeWebRoot, q);
-            else
-                q = string.Format("{0}post.aspx?id={1}{2}", Utils.ApplicationRelativeWebRoot, post.Id, q);
+            q = q.Contains("id=", StringComparison.OrdinalIgnoreCase) ? string.Format("{0}post.aspx?{1}", Utils.ApplicationRelativeWebRoot, q) : string.Format("{0}post.aspx?id={1}{2}", Utils.ApplicationRelativeWebRoot, post.Id, q);
 
             context.RewritePath(
                 url.Contains("/FEED/")
@@ -307,7 +301,7 @@
         {
             var awr = Utils.AbsoluteWebRoot;
             url = url.ToLower().Replace(awr.ToString().ToLower(), string.Empty).Replace("files/", string.Empty);
-            url = url.Substring(0, url.LastIndexOf(System.IO.Path.GetExtension(url)));
+            url = url.Substring(0, url.LastIndexOf(Path.GetExtension(url) ?? "", StringComparison.Ordinal));
             var npath = string.Format("{0}file.axd?file={1}", Utils.ApplicationRelativeWebRoot, url);
             context.RewritePath(npath);
         }
@@ -321,7 +315,7 @@
         {
             var awr = Utils.AbsoluteWebRoot;
             url = url.ToLower().Replace(awr.ToString().ToLower(), string.Empty).Replace("images/", string.Empty);
-            url = url.Substring(0, url.LastIndexOf(System.IO.Path.GetExtension(url)));
+            url = url.Substring(0, url.LastIndexOf(Path.GetExtension(url) ?? "", StringComparison.Ordinal));
             var npath = string.Format("{0}image.axd?picture={1}", Utils.ApplicationRelativeWebRoot, url);
             context.RewritePath(npath);
         }
@@ -332,7 +326,6 @@
             {
                 var npath = url.Replace(Blog.CurrentInstance.RelativeWebRoot, "/");
                 context.RewritePath(npath);
-                return;
             }
         }
 
@@ -424,7 +417,7 @@
                     string rewriteQs = string.Empty;
                     string rewriteUrl = GetUrlWithQueryString(context);
 
-                    int qsStart = rewriteUrl.IndexOf("?");
+                    int qsStart = rewriteUrl.IndexOf("?", StringComparison.Ordinal);
                     if (qsStart != -1)  // remove querystring.
                     {
                         rewriteQs = rewriteUrl.Substring(qsStart);
@@ -442,19 +435,19 @@
 
                         rewriteUrl += "default.aspx";
                     }
-                    else {
-                        if (Path.GetExtension(pathAfterAppWebRoot).ToUpperInvariant() == ".AXD")
+                    else
+                    {
+                        var extension = Path.GetExtension(pathAfterAppWebRoot);
+                        if (extension != null && extension.ToUpperInvariant() == ".AXD")
                             skipRewrite = true;
                     }
 
-                    if (!skipRewrite) {
+                        if (!skipRewrite) {
                         // remove the subfolder portion.  so /subfolder/ becomes /.
                         rewriteUrl = new Regex(Regex.Escape(blogInstance.RelativeWebRoot), RegexOptions.IgnoreCase).Replace(rewriteUrl, Utils.ApplicationRelativeWebRoot);
 
                         context.RewritePath(rewriteUrl + rewriteQs, false);
                     }
-
-                    return;
                 }
             }
         }
