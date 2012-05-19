@@ -1,0 +1,57 @@
+﻿<div class="task">
+    <h2>Variables and Import Completion</h2>
+    
+    <p>Open the @Code.Ref("VariablesCompletion") class in the @Code.Sln("Basic") solution.</p>
+    
+    <p>
+        In the @Code.Ref("IntroduceVariable") method introduce the following variables
+        
+        Hint: introduce variable works on caret expression / selection
+        Hint: look at InlineVariable
+
+        <ol>
+            <li>@Code.Ref("firstPage = 0")</li>
+            <li>@Code.Ref("lastPage = numberOfPages - 1")</li>
+            <li>@Code.Ref("currentPage = Math.Min(Math.Max(firstPage, page), lastPage)")</li>
+            <li>(Optional) @Code.Ref("firstItemInPage = currentPage * itemsPerPage")</li>
+            <li>(Optional) @Code.Ref("lastItemInPage = ((currentPage + 1) * itemsPerPage) - 1")</li>
+            <li>(Optional) @Code.Ref("itemRange = new[] { firstItemInPage, lastItemInPage }")</li>
+        </ol>
+
+        In the @Code.Ref("InlineVariable") method:
+        
+        <ol start="7">
+            <li>Inline all the variables one at a time and watch the effects.</li>
+        </ol>
+
+        In the @Code.Ref("ImportCompletion") method:
+
+        <ol start="8">
+            <li>Instantiate a @Code.Ref("new DataProcessor()") using [Import completion] to import the @Code.Ref("Basic.Support.Proc") namespace</li>
+            <li>Change the @Code.Ref("Console.WriteLine") call to output @Code.Ref("list.FirstOrDefault()") (extension method) instead of @Code.Ref("list") - using [Import completion] to import the @Code.Ref("System.Linq") namespace</li>
+        </ol>
+        
+        In the @Code.Ref("IntroduceVariableImportCompletionCombo") method:
+        
+        <ol start="10">
+            <li></li>
+        </ol>
+
+    </p>
+    
+    <div class="shortcuts">
+        <h3>Primary shortcuts</h3>
+        <table>
+            @Shortcuts.RefactorIntroduceVariable()
+            @Shortcuts.RefactorInlineVariable()
+            @Shortcuts.ImportCompletion()
+        </table>
+
+        <h3>Supporting shortcuts</h3>
+        <table>
+            @Shortcuts.RefactorThis()
+        </table>
+    </div>
+
+</div>
+

@@ -97,6 +97,7 @@
     <Content Include="App_Code\Shortcuts.cshtml" />
     <Content Include="Views\Home\FindUsages.cshtml" />
     <Content Include="Views\Home\FirstTaskRevisited.cshtml" />
+    <Content Include="Views\Home\CompletionModesIntroduceInline.cshtml" />
     <None Include="Views\Home\MoveCode.cshtml" />
     <Content Include="Views\Home\NavigateTo.cshtml" />
     <Content Include="Views\Home\NavigateHierarchy.cshtml" />

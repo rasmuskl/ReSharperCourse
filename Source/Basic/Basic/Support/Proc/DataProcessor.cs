@@ -1,6 +1,6 @@
 using System;
 
-namespace Basic.Support
+namespace Basic.Support.Proc
 {
     public class DataProcessor
     {

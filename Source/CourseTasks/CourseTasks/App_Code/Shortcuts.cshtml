@@ -160,6 +160,26 @@
     @Scaffold("Quick fix", "A", "Enter")
 }
 
+@helper ImportCompletion()
+{
+    @Scaffold("Import completion", "AS", "Space")
+}
+
+@helper RefactorThis()
+{
+    @Scaffold("Refactor this", "CS", "R")
+}
+
+@helper RefactorIntroduceVariable()
+{
+    @ScaffoldChord("Refactor: Introduce variable", "C", "R", "C", "V")
+}
+
+@helper RefactorInlineVariable()
+{
+    @ScaffoldChord("Refactor: Inline variable", "C", "R", "C", "I")
+}
+
 @helper Scaffold(string description, string modifiers, string key)
 {
     <tr>
