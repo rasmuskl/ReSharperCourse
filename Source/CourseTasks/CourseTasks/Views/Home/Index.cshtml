@@ -11,6 +11,7 @@
 <h3>Reading code</h3>
 
 @Html.Partial("NavigateTo")
+@Html.Partial("ContextualHelp")
 @Html.Partial("FindUsages")
 @Html.Partial("NavigateHierarchy")
 @Html.Partial("InspectThis")
@@ -19,14 +20,12 @@
 <h3>Writing code</h3>
 
 @*@Html.Partial("BasicEditor")*@
-@Html.Partial("QuickFix")
 @Html.Partial("Rename")
 @Html.Partial("GenerateCode")
 @Html.Partial("CompletionModesIntroduceInline")
 @Html.Partial("SolutionLevel")
-@Html.Partial("ExtractInlineMethod")
-
 @Html.Partial("MoveCode")
+@Html.Partial("ExtractInlineMethod")
 
 <h3>Last</h3>
 @Html.Partial("FirstTaskRevisited")
