@@ -1,38 +1,23 @@
 ﻿<div class="task">
-    <h2>First Assignment Revisited</h2>
-    <p>
-        In the @Code.Sln("Basic") solution. Create the 2 following classes:
-    </p>
-    <ul>
-        <li>@Code.Ref("Plan")</li>
-        <li>@Code.Ref("Document")</li>
-    </ul>
-    <p>
-        The @Code.Ref("Plan") class should take a name (@Code.Ref("string")), some documents (@Code.Ref("IEnumerable<Document>"))
-        and a security classification (@Code.Ref("Basic.Support.SecurityClassification")) in it's constructor
-        and expose them as read-only properties.
-    </p>
-    <p>
-        One solution could look like this:</p>
-    <div class="file">
-        Plan.cs
-        @Helpers.RenderFile("~/Code/Basic/Plan.cs")
-    </div>
-    <div class="file">
-        Document.cs
-        @Helpers.RenderFile("~/Code/Basic/Document.cs")
-    </div>
     
+    <h2>First Task Revisited</h2>
+
+    <p>
+        Repeat the first task, but try to incorporate the things you've learned in the previous lessions.
+        Below you'll find a list of the shortcuts that might be helpful for faster flows.
+    </p>
+
     <div class="shortcuts">
         <h3>Primary shortcuts</h3>
         <table>
-            // Generate code (class)
-            // Generate code (constructor)
-            // Import Completion
-            // Quick Fix
-            // Navigate to next error
-            // Navigate to next suggestion
-            // Generate code (properties)
+            @Shortcuts.QuickFix()
+            @Shortcuts.GenerateFileSolutionExplorer()
+            @Shortcuts.GenerateCode()
+            @Shortcuts.ImportCompletion()
+            @Shortcuts.NavigateToNextSuggestion()
+            @Shortcuts.NavigateToPrevSuggestion()
+            @Shortcuts.NavigateToNextError()
+            @Shortcuts.NavigateToPrevError()
         </table>
     </div>
 
