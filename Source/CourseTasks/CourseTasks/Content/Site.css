@@ -52,12 +52,11 @@ span.inline-code {
     background-color: #fefefe;
     border: 1px dashed #ccc;
     padding: 5px 12px;
-}
-
-.hint {
-    background-color: #fefefe;
-    border: 1px dashed #ccc;
-    padding: 5px 12px;
+    background-image: url(/Content/tip_icon.png);
+    background-repeat:no-repeat;
+    background-size: 24px 24px;
+    background-position: 10px center;
+    padding-left: 45px;    
 }
 
 kbd
