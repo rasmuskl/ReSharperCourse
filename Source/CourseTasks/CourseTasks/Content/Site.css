@@ -6,6 +6,10 @@ body
     background-color: #fff;
 }
 
+h1, h2 {
+    text-decoration: underline;
+}
+
 header,
 footer,
 nav,
