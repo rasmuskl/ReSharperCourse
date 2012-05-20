@@ -26,7 +26,7 @@ pre {
 
 span.inline-code {
     background-color: #eee;
-    padding: 0;
+    padding: 0 2px;
     display: inline;
     font-family: monospace;
     white-space: pre;
@@ -49,7 +49,7 @@ span.inline-code {
 }
 
 .tip {
-    background-color: #fefefe;
+    background-color: #eee;
     border: 1px dashed #ccc;
     padding: 5px 12px;
     background-image: url(/Content/tip_icon.png);
@@ -77,4 +77,14 @@ kbd
     margin:0 .1em;
     padding:.1em .6em;
     text-shadow:0 1px 0 #fff;
+}
+
+.shortcut {
+    border: 1px solid #ccc;
+    background-color: #fefefe;
+    padding: 0 5px;
+}
+
+.tip .shortcut {
+    background-color: #fff;
 }
