@@ -17,15 +17,16 @@ section {
     border: 1px solid #999;
     padding: 10px 20px;
     margin: 3px;
+    page-break-after: always;
 }
 
 pre {
-    background-color: #eee;
+    background-color: #fafafa;
     padding: 1em 0 0 1em;
 }
 
 span.inline-code {
-    background-color: #eee;
+    background-color: #fafafa;
     padding: 0 2px;
     display: inline;
     font-family: monospace;
