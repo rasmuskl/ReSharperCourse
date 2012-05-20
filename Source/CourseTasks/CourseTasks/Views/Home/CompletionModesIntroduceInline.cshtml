@@ -27,13 +27,13 @@
         In the @Code.Ref("ImportCompletion") method:
 
         <ol start="8">
-            <li>Instantiate a @Code.Ref("new DataProcessor()") using [Import completion] to import the @Code.Ref("Basic.Support.Proc") namespace</li>
-            <li>Change the @Code.Ref("Console.WriteLine") call to output @Code.Ref("list.FirstOrDefault()") (extension method) instead of @Code.Ref("list") - using [Import completion] to import the @Code.Ref("System.Linq") namespace</li>
+            <li>Instantiate a @Code.Ref("new DataProcessor()") using @Helpers.ShortcutRef("Import completion") to import the @Code.Ref("Basic.Support.Proc") namespace</li>
+            <li>Change the @Code.Ref("Console.WriteLine") call to output @Code.Ref("list.FirstOrDefault()") (extension method) instead of @Code.Ref("list") - using @Helpers.ShortcutRef("Import completion") to import the @Code.Ref("System.Linq") namespace</li>
         </ol>
         
         <h4>Optional extras</h4>
 
-        In the @Code.Ref("IntroduceVariableImportCompletionCombo") method, find the shortest keysequence for writing the following statements using [Import completion] followed by [Introduce variable]. (see example below)
+        In the @Code.Ref("IntroduceVariableImportCompletionCombo") method, find the shortest keysequence for writing the following statements using @Helpers.ShortcutRef("Import completion") followed by @Helpers.ShortcutRef("Introduce variable"). (see example below)
         
         <ol start="10">
             <li>@Code.Ref("var dictionary = new HybridDictionary();")</li>
@@ -47,7 +47,7 @@
         <h3>Example - Import/Introduce combo</h3>
         
         <p>
-            Combining [Import completion] and [Introduce variable]. Shortest key sequence for writing in a file where the @Code.Ref("System.Text") namespace is not imported:
+            Combining @Helpers.ShortcutRef("Import completion") and @Helpers.ShortcutRef("Introduce variable"). Shortest key sequence for writing in a file where the @Code.Ref("System.Text") namespace is not imported:
             
             <ul>
                 <li>@Code.Ref("var stringBuilder = new StringBuilder();")</li>

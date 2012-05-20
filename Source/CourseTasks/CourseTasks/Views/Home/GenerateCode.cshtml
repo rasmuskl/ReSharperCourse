@@ -1,26 +1,39 @@
 ﻿<div class="task">
     <h2>Generate Code</h2>
     
-    <p>Open the @Code.Ref("CodeCollection") class in the @Code.Sln("Basic") solution.</p>
-    
-    <ul>
-        <li>Assign constructor arguments to fields using quick fix.</li>
-        <li>Delete constructor</li>
-        <li>Create constructor with generate code</li>
-        <li>Generate readonly properties for some fields</li>
-        <li>Generate properties for the rest</li>
-        <li>Create equality members for some of the fields</li>
-        <li>Extra: Generate delegating methods for the Add method of the list field.</li>
-    </ul>
+    <p>Open the @Code.Ref("GenerateCode") class in the @Code.Sln("Basic") solution.</p>
 
     <p>
         <ol>
+            <li>From the constructor of @Code.Ref("GenerateCode") call a the non-existant private method like so: @Code.Ref("Test(name, tags)")</li>
+            <li>Use @Helpers.ShortcutRef("Quick fix") to create the method</li>
+            <li>From the @Code.Ref("Test") method instantiate a non-existant class like so: @Code.Ref("new CodeCollection(name, tags)")</li>
+            <li>Use @Helpers.ShortcutRef("Quick fix") to create the class + constructor</li>
+            <li>Assign the parameters of the @Code.Ref("CodeCollection") to fields using @Helpers.ShortcutRef("Quick fix")</li>
+            <li>Delete the constructor</li>
+            <li>Use @Helpers.ShortcutRef("Generate code") to re-create the constructor</li>
+            <li>Use @Helpers.ShortcutRef("Generate code") to create a read-only property for the @Code.Ref("name") field</li>
+        </ol>
+        
+        <h4>Optional extras</h4>
+        
+        <ol>
+            <li>Generate a property for the @Code.Ref("tags") field</li>
+            <li>Generate equality members for the class depending on the @Code.Ref("name") field</li>
+            <li>Generate delegating methods for the @Code.Ref("Add") method and the @Code.Ref("Count") properties of the @Code.Ref("tags") list</li>
         </ol>
     </p>
     
     <div class="shortcuts">
         <h3>Primary shortcuts</h3>
         <table>
+            @Shortcuts.QuickFix()
+            @Shortcuts.GenerateCode()
+        </table>
+        <h3>Supporting shortcuts</h3>
+        <table>
+            @Shortcuts.NavigateToNextSuggestion()
+            @Shortcuts.NavigateToPrevSuggestion()
         </table>
     </div>
 
