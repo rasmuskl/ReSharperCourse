@@ -27,6 +27,7 @@ section {
 pre {
     background-color: #fafafa;
     padding: 1em 0 0 1em;
+    font-weight: bold;
 }
 
 span.inline-code {
@@ -36,6 +37,7 @@ span.inline-code {
     font-family: monospace;
     white-space: pre;
     margin: 1em 0px;
+    font-weight: bold;
 }
 
 .shortcuts table, .shortcuts td {
