@@ -5,9 +5,9 @@
 
     <p>
         <ol>
-            <li>From the constructor of @Code.Ref("GenerateCode") call a the non-existant private method like so: @Code.Ref("Test(name, tags)")</li>
+            <li>From the constructor of @Code.Ref("GenerateCode") call a the non-existant private method like so: @Code.Ref("Create(name, tags)")</li>
             <li>Use @Helpers.ShortcutRef("Quick fix") to create the method</li>
-            <li>From the @Code.Ref("Test") method instantiate a non-existant class like so: @Code.Ref("new CodeCollection(name, tags)")</li>
+            <li>From the @Code.Ref("Create") method instantiate a non-existant class like so: @Code.Ref("new CodeCollection(name, tags)")</li>
             <li>Use @Helpers.ShortcutRef("Quick fix") to create the class + constructor</li>
             <li>Assign the parameters of the @Code.Ref("CodeCollection") to fields using @Helpers.ShortcutRef("Quick fix")</li>
             <li>Delete the constructor</li>
@@ -17,7 +17,7 @@
         
         <h4>Optional extras</h4>
         
-        <ol>
+        <ol start="9">
             <li>Generate a property for the @Code.Ref("tags") field</li>
             <li>Generate equality members for the class depending on the @Code.Ref("name") field</li>
             <li>Generate delegating methods for the @Code.Ref("Add") method and the @Code.Ref("Count") properties of the @Code.Ref("tags") list</li>

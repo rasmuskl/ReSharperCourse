@@ -6,6 +6,7 @@ namespace Basic.Generate
     {
         public GenerateCode(string name, List<string> tags)
         {
+
         }
     }
 }

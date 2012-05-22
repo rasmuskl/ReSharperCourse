@@ -104,7 +104,7 @@
     <None Include="Views\Home\MoveCode.cshtml" />
     <Content Include="Views\Home\NavigateTo.cshtml" />
     <Content Include="Views\Home\NavigateHierarchy.cshtml" />
-    <Content Include="Views\Home\CodeInspections.cshtml" />
+    <Content Include="Views\Home\CodeAnalysis.cshtml" />
     <Content Include="Views\Home\TaskTemplate.cshtml" />
     <Content Include="Views\Home\SolutionLevel.cshtml" />
     <Content Include="Views\Home\Rename.cshtml" />
