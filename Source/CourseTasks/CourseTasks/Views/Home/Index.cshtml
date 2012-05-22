@@ -6,29 +6,21 @@
 
 <div style="page-break-after: always"></div>
 
-<h1>Section: Motivation</h1>
-
 @Html.Partial("FirstTask")
-
-<h1>Section: Reading code</h1>
 
 @Html.Partial("NavigateTo")
 @Html.Partial("CodeInspections")
-@Html.Partial("FindUsages")
-@Html.Partial("NavigateHierarchy")
-@Html.Partial("InspectThis")
-@*@Html.Partial("StackTraceExplorer")*@
-
-<h1>Section: Writing code</h1>
-
-@*@Html.Partial("BasicEditor")*@
-@Html.Partial("Rename")
 @Html.Partial("GenerateCode")
+@Html.Partial("Rename")
 @Html.Partial("CompletionModesIntroduceInline")
+@Html.Partial("FindUsages")
 @Html.Partial("SolutionLevel")
 @Html.Partial("MoveCode")
-@*@Html.Partial("ExtractInlineMethod")*@
+@Html.Partial("NavigateHierarchy")
+@Html.Partial("InspectThis")
 
-<h1>Section: Wrap-up</h1>
+@*@Html.Partial("StackTraceExplorer")*@
+@*@Html.Partial("BasicEditor")*@
+@*@Html.Partial("ExtractInlineMethod")*@
 
 @Html.Partial("FirstTaskRevisited")
