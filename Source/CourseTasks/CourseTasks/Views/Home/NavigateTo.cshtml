@@ -4,6 +4,25 @@
     <p>
         Find the shortest sequence of keys to navigate to following items. See example below.
 
+        <div class="example">
+            <h3>Example - Shortest Sequence</h3>
+            <p>
+                The shortest sequence of keys to navigate to
+            
+                <ul>
+                    <li>The file @Code.Ref("templates/roles.htm")</li>
+                </ul>
+            
+                would be:
+            
+                <ul>
+                    <li>@Keys.Shortcut("CS", "T") (Go to file)</li>
+                    <li>@Keys.Key("r")@Keys.Key("h")@Keys.Key("t") (matches <b>r</b>oles.<b>ht</b>m)</li>
+                    <li>@Keys.Enter()</li>
+                </ul>
+            </p>        
+        </div>
+
         <ol>
             <li>The class @Code.Ref("QuickNotes") class in the @Code.Ref("BlogEngine.Core.Notes") namespace</li>
             <li>The file @Code.Ref("blog.js") file in the @Code.Ref("Scripts/Header/") folder</li>
@@ -23,25 +42,6 @@
         </ol>
 
     </p>
-
-    <div class="example">
-        <h3>Example - Shortest Sequence</h3>
-        <p>
-            The shortest sequence of keys to navigate to
-            
-            <ul>
-                <li>The file @Code.Ref("templates/roles.htm")</li>
-            </ul>
-            
-            would be:
-            
-            <ul>
-                <li>@Keys.Shortcut("CS", "T") (Go to file)</li>
-                <li>@Keys.Key("r")@Keys.Key("h")@Keys.Key("t") (matches <b>r</b>oles.<b>ht</b>m)</li>
-                <li>@Keys.Enter()</li>
-            </ul>
-        </p>        
-    </div>
     
     <div class="shortcuts">
         <h3>Primary shortcuts</h3>

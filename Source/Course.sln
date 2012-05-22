@@ -43,8 +43,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReSharperCourse", "Rebus\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tennis", "Tennis\Tennis\Tennis.csproj", "{B374D4EC-C0ED-47F8-9896-A1513A81770A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Context", "Context\Context\Context.csproj", "{EA23D492-44B0-4FC2-8254-9F66AEA10ADF}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,10 +85,6 @@ Global
 		{B374D4EC-C0ED-47F8-9896-A1513A81770A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B374D4EC-C0ED-47F8-9896-A1513A81770A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B374D4EC-C0ED-47F8-9896-A1513A81770A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EA23D492-44B0-4FC2-8254-9F66AEA10ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EA23D492-44B0-4FC2-8254-9F66AEA10ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EA23D492-44B0-4FC2-8254-9F66AEA10ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EA23D492-44B0-4FC2-8254-9F66AEA10ADF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

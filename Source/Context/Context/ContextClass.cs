@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using Basic.Support.Proc;
 
 namespace Basic.Context.Misc
 {
@@ -32,7 +33,7 @@ namespace Basic.Context.Misc
                     {
                         if (data != "a")
                         {
-                            DataProcessor.DoProcessing(data);
+                            DataProcessor.DoProcessing(data)
                             quantity++;
                         }
                     }
