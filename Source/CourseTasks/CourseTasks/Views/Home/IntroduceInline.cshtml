@@ -1,0 +1,36 @@
+﻿<div class="task">
+    <h2>Introduce and Inline variables</h2>
+    
+    <p>Open the @Code.Ref("Variables") class in the @Code.Sln("Course") solution.</p>
+    
+    <p>
+        In the @Code.Ref("IntroduceVariable") method introduce the following variables
+        
+        <ol>
+            <li>@Code.Ref("firstPage = 0")</li>
+            <li>@Code.Ref("lastPage = numberOfPages - 1")</li>
+            <li>@Code.Ref("currentPage = Math.Min(Math.Max(firstPage, page), lastPage)")</li>
+            <li>(Optional) @Code.Ref("firstItemInPage = currentPage * itemsPerPage")</li>
+            <li>(Optional) @Code.Ref("lastItemInPage = ((currentPage + 1) * itemsPerPage) - 1")</li>
+            <li>(Optional) @Code.Ref("itemRange = new[] { firstItemInPage, lastItemInPage }")</li>
+        </ol>
+
+        In the @Code.Ref("InlineVariable") method:
+        
+        <ol start="7">
+            <li>Inline all the variables one at a time and watch the effects.</li>
+        </ol>
+
+    </p>
+    
+    <div class="shortcuts">
+        <h3>Primary shortcuts</h3>
+        <table>
+            @Shortcuts.RefactorThis()
+            @Shortcuts.RefactorIntroduceVariable()
+            @Shortcuts.RefactorInlineVariable()
+        </table>
+    </div>
+
+</div>
+

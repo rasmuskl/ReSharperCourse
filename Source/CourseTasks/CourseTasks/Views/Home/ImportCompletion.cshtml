@@ -1,29 +1,9 @@
 ﻿<div class="task">
-    <h2>Variables and Import Completion</h2>
+    <h2>Import Completion</h2>
     
-    <p>Open the @Code.Ref("VariablesCompletion") class in the @Code.Sln("Basic") solution.</p>
+    <p>Open the @Code.Ref("ImportCompletion") class in the @Code.Sln("Course") solution.</p>
     
     <p>
-        In the @Code.Ref("IntroduceVariable") method introduce the following variables
-        
-        Hint: introduce variable works on caret expression / selection
-        Hint: look at InlineVariable
-
-        <ol>
-            <li>@Code.Ref("firstPage = 0")</li>
-            <li>@Code.Ref("lastPage = numberOfPages - 1")</li>
-            <li>@Code.Ref("currentPage = Math.Min(Math.Max(firstPage, page), lastPage)")</li>
-            <li>(Optional) @Code.Ref("firstItemInPage = currentPage * itemsPerPage")</li>
-            <li>(Optional) @Code.Ref("lastItemInPage = ((currentPage + 1) * itemsPerPage) - 1")</li>
-            <li>(Optional) @Code.Ref("itemRange = new[] { firstItemInPage, lastItemInPage }")</li>
-        </ol>
-
-        In the @Code.Ref("InlineVariable") method:
-        
-        <ol start="7">
-            <li>Inline all the variables one at a time and watch the effects.</li>
-        </ol>
-
         In the @Code.Ref("ImportCompletion") method:
 
         <ol start="8">
@@ -31,8 +11,6 @@
             <li>Change the @Code.Ref("Console.WriteLine") call to output @Code.Ref("list.FirstOrDefault()") (extension method) instead of @Code.Ref("list") - using @Helpers.ShortcutRef("Import completion") to import the @Code.Ref("System.Linq") namespace</li>
         </ol>
         
-        <h4>Optional extras</h4>
-
         In the @Code.Ref("IntroduceVariableImportCompletionCombo") method, find the shortest keysequence for writing the following statements using @Helpers.ShortcutRef("Import completion") followed by @Helpers.ShortcutRef("Introduce variable"). (see example below)
         
         <ol start="10">
@@ -40,7 +18,6 @@
             <li>@Code.Ref("var collection = new BlockingCollection<ConcurrentQueue<Guid>>();")</li>
             <li>@Code.Ref("var compressionMode = CompressionMode.Compress;")</li>
         </ol>
-
     </p>
     
     <div class="example">
@@ -72,12 +49,7 @@
         <h3>Primary shortcuts</h3>
         <table>
             @Shortcuts.RefactorIntroduceVariable()
-            @Shortcuts.RefactorInlineVariable()
             @Shortcuts.ImportCompletion()
-        </table>
-
-        <h3>Supporting shortcuts</h3>
-        <table>
             @Shortcuts.RefactorThis()
         </table>
     </div>

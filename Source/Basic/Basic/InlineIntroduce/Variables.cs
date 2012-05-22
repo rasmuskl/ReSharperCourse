@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Basic.InlineCompletion
 {
-    public class VariablesCompletion
+    public class Variables
     {
-        /// <summary>
-        /// Gets the item range for a given page.
-        /// </summary>
         public int[] IntroduceVariable(int page, int numberOfPages, int itemsPerPage)
         {
             return new[]
@@ -17,9 +13,6 @@ namespace Basic.InlineCompletion
                 };
         }
 
-        /// <summary>
-        /// Gets the item range for a given page.
-        /// </summary>
         public int[] InlineVariable(int page, int numberOfPages, int itemsPerPage)
         {
             int firstPage = 0;
@@ -32,16 +25,6 @@ namespace Basic.InlineCompletion
             var itemRange = new[] { firstItemInPage, lastItemInPage };
 
             return itemRange;
-        }
-
-        public void ImportCompletion(List<string> list)
-        {
-
-            Console.Out.WriteLine(list);
-        }
-
-        public void IntroduceVariableImportCompletionCombo()
-        {
         }
     }
 }

@@ -98,9 +98,10 @@
     <Content Include="App_Code\Shortcuts.cshtml" />
     <Content Include="Views\Home\FindUsages.cshtml" />
     <Content Include="Views\Home\FirstTaskRevisited.cshtml" />
-    <Content Include="Views\Home\CompletionModesIntroduceInline.cshtml" />
+    <Content Include="Views\Home\IntroduceInline.cshtml" />
     <Content Include="Views\Home\GenerateCode.cshtml" />
     <Content Include="Views\Home\ExtractInlineMethod.cshtml" />
+    <Content Include="Views\Home\ImportCompletion.cshtml" />
     <None Include="Views\Home\MoveCode.cshtml" />
     <Content Include="Views\Home\NavigateTo.cshtml" />
     <Content Include="Views\Home\NavigateHierarchy.cshtml" />
