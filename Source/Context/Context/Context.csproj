@@ -43,6 +43,12 @@
     <Compile Include="ContextClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Basic\Basic\Basic.csproj">
+      <Project>{9F3C8C2B-F974-4E33-8593-7B2B06654577}</Project>
+      <Name>Basic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

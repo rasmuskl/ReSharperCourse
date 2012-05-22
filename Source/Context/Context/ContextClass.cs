@@ -44,9 +44,9 @@ namespace Basic.Context.Misc
             }
         }
 
-        public void DoLess()
+        public void DoLess(string name)
         {
-            Console.Out.WriteLine(_nam);
+            Console.Out.WriteLine(nam);
         }
     }
 }

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Generate\GenerateCode.cs" />
+    <Compile Include="InspectThis\Inspecter.cs" />
     <Compile Include="MoveCode\OutOfOrderMethods.cs" />
     <Compile Include="Rename\H.cs" />
     <Compile Include="Support\Proc\DataProcessor.cs" />

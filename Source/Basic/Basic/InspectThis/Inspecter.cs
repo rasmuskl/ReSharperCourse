@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Basic.InspectThis
 {
-    public class Program
+    public class Inspecter
     {
         public static void Main()
         {
