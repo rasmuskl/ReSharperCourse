@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Basic.InlineCompletion
+namespace Basic.InlineIntroduce
 {
     public class Variables
     {

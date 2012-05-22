@@ -6,32 +6,33 @@
     <p>
         Navigate to the @Code.Ref("RebusHierarchyLesson") class.
     </p>
-
-    <p class="tip">
-        <b>Tip:</b> If you navigate to a file and want to go back to where you were, you can either use @Helpers.ShortcutRef("Close current file") or @Helpers.ShortcutRef("Go back (Visual Studio)"). 
-    </p>
     
     <p>
+        Using hierarchy navigation (@Helpers.ShortcutRef("Go to base") / @Helpers.ShortcutRef("Go to declaration") / @Helpers.ShortcutRef("Go to derived")) figure out
+        
+        <ol>
+            <li>From @Code.Ref("SimpleHandlerActivator") - how can you get to @Code.Ref("IActivateHandlers")</li>
+            <li>From @Code.Ref("IActivateHandlers") - how can you get to @Code.Ref("WindsorContainerAdapter")</li>
+            <li>From @Code.Ref("WindsorContainerAdapter") - how can you get to @Code.Ref("IContainerAdapter")</li>
+        </ol>
+
         Without leaving @Code.Ref("RebusHierarchyLesson") figure out the following from the @Code.Ref("Lesson") method.
                 
         <p class="tip">
             <b>Hint:</b> @Helpers.ShortcutRef("Go to derived") shows a list of possible navigation targets for whatever's under the caret.
         </p>
 
-        <ol>
+        <ol start="4">
+            <li>Using Type Hierachy, which class implementing @Code.Ref("IActivateHandlers") does not implement @Code.Ref("IContainerAdapter")</li>
             <li>Number of classes and interfaces implementing @Code.Ref("IActiveHandlers")</li>
             <li>Out of the these - how many implement the @Code.Ref("GetHandlerInstancesFor<T>")</li>
             <li>Number of classes and interfaces implementing @Code.Ref("IHandleMessages<T>")</li>
-            <li>Using Type Hierachy, which class implementing @Code.Ref("IActivateHandlers") does not implement @Code.Ref("IContainerAdapter")</li>
         </ol>
         
-        Using hierarchy navigation (@Helpers.ShortcutRef("Go to base") / @Helpers.ShortcutRef("Go to declaration") / @Helpers.ShortcutRef("Go to derived")) figure out
-        
-        <ol start="5">
-            <li>From @Code.Ref("SimpleHandlerActivator") - how can you get to @Code.Ref("IActivateHandlers")</li>
-            <li>From @Code.Ref("IActivateHandlers") - how can you get to @Code.Ref("WindsorContainerAdapter")</li>
-            <li>From @Code.Ref("WindsorContainerAdapter") - how can you get to @Code.Ref("IContainerAdapter")</li>
-        </ol>
+    </p>
+
+    <p class="tip">
+        <b>Tip:</b> If you navigate to a file and want to go back to where you were, you can either use @Helpers.ShortcutRef("Close current file") or @Helpers.ShortcutRef("Go back (Visual Studio)"). 
     </p>
     
     <div class="shortcuts">
