@@ -1,6 +1,6 @@
 body
 {
-    font-size: .85em;
+    font-size: 14pt;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     color: #232323;
     background-color: #fff;
@@ -28,6 +28,7 @@ pre {
     background-color: #fafafa;
     padding: 1em 0 0 1em;
     font-weight: bold;
+    font-size: 0.85em    
 }
 
 span.inline-code {

@@ -1,0 +1,4 @@
+[IEntity|Id]^-.-[IPet|Name;Speak()]
+[IPet]^-.-[AbstractAnimal|Id;Name;Speak()]
+[AbstractAnimal]^-[Dog|Bark();Fetch()]
+[AbstractAnimal]^-[Cat|Purr()]

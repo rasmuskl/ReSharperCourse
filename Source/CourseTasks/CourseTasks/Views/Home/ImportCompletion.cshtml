@@ -1,19 +1,22 @@
 ﻿<div class="task">
     <h2>Import Completion</h2>
     
-    <p>Open the @Code.Ref("ImportCompletion") class in the @Code.Sln("Course") solution.</p>
+    <p>Open the @Code.Ref("ImportCompletion") class in the @Code.Sln("Basic") project.</p>
     
     <p>
         In the @Code.Ref("ImportCompletion") method:
 
-        <ol start="8">
+        <ol>
             <li>Instantiate a @Code.Ref("new DataProcessor()") using @Helpers.ShortcutRef("Import completion") to import the @Code.Ref("Basic.Support.Proc") namespace</li>
             <li>Change the @Code.Ref("Console.WriteLine") call to output @Code.Ref("list.FirstOrDefault()") (extension method) instead of @Code.Ref("list") - using @Helpers.ShortcutRef("Import completion") to import the @Code.Ref("System.Linq") namespace</li>
+            <li>Instantiate a @Code.Ref("System.Threading.Timeout")</li>
+            <li>Instantiate a @Code.Ref("System.Security.SecureString")</li>
         </ol>
         
         In the @Code.Ref("IntroduceVariableImportCompletionCombo") method, find the shortest keysequence for writing the following statements using @Helpers.ShortcutRef("Import completion") followed by @Helpers.ShortcutRef("Introduce variable"). (see example below)
         
-        <ol start="10">
+        <ol start="5">
+            <li>@Code.Ref("var stringBuilder = new StringBuilder();")</li>
             <li>@Code.Ref("var dictionary = new HybridDictionary();")</li>
             <li>@Code.Ref("var collection = new BlockingCollection<ConcurrentQueue<Guid>>();")</li>
             <li>@Code.Ref("var compressionMode = CompressionMode.Compress;")</li>
