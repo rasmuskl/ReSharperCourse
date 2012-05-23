@@ -107,7 +107,7 @@
     <Content Include="Views\Home\NavigateHierarchy.cshtml" />
     <Content Include="Views\Home\CodeAnalysis.cshtml" />
     <Content Include="Views\Home\TaskTemplate.cshtml" />
-    <Content Include="Views\Home\SolutionLevel.cshtml" />
+    <Content Include="Views\Home\SolutionExplorer.cshtml" />
     <Content Include="Views\Home\Rename.cshtml" />
   </ItemGroup>
   <ItemGroup>
