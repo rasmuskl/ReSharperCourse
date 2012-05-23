@@ -42,6 +42,12 @@
   <ItemGroup>
     <Compile Include="Completion\ImportCompletion.cs" />
     <Compile Include="Generate\GenerateCode.cs" />
+    <Compile Include="Hierarchies\AbstractAnimal.cs" />
+    <Compile Include="Hierarchies\Cat.cs" />
+    <Compile Include="Hierarchies\Dog.cs" />
+    <Compile Include="Hierarchies\IEntity.cs" />
+    <Compile Include="Hierarchies\IPet.cs" />
+    <Compile Include="Hierarchies\NavigateHierarchies.cs" />
     <Compile Include="InspectThis\Inspecter.cs" />
     <Compile Include="MoveCode\OutOfOrderMethods.cs" />
     <Compile Include="Rename\H.cs" />

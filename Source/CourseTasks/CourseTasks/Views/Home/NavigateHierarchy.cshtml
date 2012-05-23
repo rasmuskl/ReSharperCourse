@@ -1,14 +1,20 @@
 ﻿<div class="task">
     <h2>Navigate Hierarchies</h2>
     
-    <p>Open the @Code.Sln("Rebus") solution.</p>
-    
     <p>
+        Navigate to the @Code.Ref("Navigate") method of the @Code.Ref("NavigateHierachies") class.
+
+        <ol>
+            <li>Examine the @Helpers.ShortcutRef("Type Hierarchy") of @Code.Ref("IEntity")</li>
+            <li>What is the difference between @Helpers.ShortcutRef("Go to implementation") and @Helpers.ShortcutRef("Go to derived") on the @Code.Ref("IPet.Speak") method?</li>
+            <li>Where does @Helpers.ShortcutRef("Go to implementation") on @Code.Ref("IEntity.Id") followed by @Helpers.ShortcutRef("Go to base") take you? Why?</li>        
+        </ol>
+
         Navigate to the @Code.Ref("RebusHierarchyLesson") class.
-    </p>
-    
-    <p>
-        Using hierarchy navigation (@Helpers.ShortcutRef("Go to base") / @Helpers.ShortcutRef("Go to declaration") / @Helpers.ShortcutRef("Go to derived")) figure out
+        
+        Using hierarchy navigation (@Helpers.ShortcutRef("Go to declaration") / @Helpers.ShortcutRef("Go to implementation") / @Helpers.ShortcutRef("Go to base") / @Helpers.ShortcutRef("Go to derived")) figure out
+        
+        <p>Remember that you can consult the @Helpers.ShortcutRef("Type Hierachy").</p>
         
         <ol>
             <li>From @Code.Ref("SimpleHandlerActivator") - how can you get to @Code.Ref("IActivateHandlers")</li>
@@ -38,10 +44,11 @@
     <div class="shortcuts">
         <h3>Primary shortcuts</h3>
         <table>
-            @Shortcuts.ShowTypeHierarchy()
+            @Shortcuts.GoToDeclaration()
+            @Shortcuts.GoToImplementation()
             @Shortcuts.GoToBase()
             @Shortcuts.GoToDerived()
-            @Shortcuts.GoToDeclaration()
+            @Shortcuts.ShowTypeHierarchy()
         </table>
         <h3>Supporting shortcuts</h3>
         <table>
