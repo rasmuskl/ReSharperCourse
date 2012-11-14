@@ -19,3 +19,5 @@ Source/**/**/bin/
 Backup
 _UpgradeReport_Files
 upgradelog.*
+
+bin
