@@ -37,6 +37,18 @@ namespace Basic.Context.Misc
                             quantity++;
                         }
                     }
+
+                    string dataA = null;
+                    foreach (var data in dataValues)
+                    {
+                        if (data == "a")
+                        {
+                            dataA = data;
+                            break;
+                        }
+                    }
+
+                    Console.Out.WriteLine(dataA);
                 }
                 catch (Exception ex)
                 {
