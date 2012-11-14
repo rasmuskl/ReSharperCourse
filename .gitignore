@@ -12,3 +12,10 @@ Source/**.dotCover
 Source/**.user
 Source/**/**/obj/
 Source/**/**/bin/
+
+*.ncrunchsolution
+*.ncrunchsolution.user
+
+Backup
+_UpgradeReport_Files
+upgradelog.*
