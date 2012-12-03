@@ -1,0 +1,8 @@
+Import completion opgave: 
+- ImportCompletion metoden findes ikke.
+- Timeout er abstrakt
+
+Tilføj 'getting started with R#' til sidst i exercises så folk får det med hjem.
+
+Go to opgave:
+ - Forkert genvej til Go to member - alt i stedet for ctrl.
