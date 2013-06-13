@@ -2,7 +2,7 @@
 
 This is my basic ReSharper (http://www.jetbrains.com/resharper/) course material developed in 2012 - based on ReSharper 6.1, although a lot of the material is still relevant. 
 
-It should provide enough content for 4 to 6 hours of entertainment.
+It should provide enough content for 4 to 6 hours of entertainment. The course focuses on progressivly harder exercises and hands-on experience over a lot of talk.
 
 Exercises are generated through the ASP.NET MVC site found in `Source/CourseTasks`.
 
