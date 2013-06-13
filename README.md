@@ -6,6 +6,22 @@ It should provide enough content for 4 to 6 hours of entertainment.
 
 Exercises are generated through the ASP.NET MVC site found in `Source/CourseTasks`.
 
+# Topics
+
+- Why use ReSharper?
+- Navigation 
+- Code Interaction
+- Code Analysis
+- Code Generation
+- Refactoring
+- Completion modes
+- Refactoring combos
+- Usage Inspection
+- Solution Refactorings
+- Move Code
+- Navigating Hierarchies
+- Inspect This
+
 # Licensing
 
 Course material is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
