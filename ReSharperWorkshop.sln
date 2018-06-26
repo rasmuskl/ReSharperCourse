@@ -5,6 +5,23 @@ VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReSharperWorkshop", "ReSharperWorkshop\ReSharperWorkshop.csproj", "{FCB1526F-4F4C-4A88-88E4-9F5B8EE2829E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercises", "Exercises", "{27BC444C-CA73-4A39-B505-00E2034386B0}"
+	ProjectSection(SolutionItems) = preProject
+		Exercises\01.InitialShortcuts.md = Exercises\01.InitialShortcuts.md
+		Exercises\02.Navigation.md = Exercises\02.Navigation.md
+		Exercises\03.Annotations.md = Exercises\03.Annotations.md
+		Exercises\04.CodeGeneration.md = Exercises\04.CodeGeneration.md
+		Exercises\05.Renaming.md = Exercises\05.Renaming.md
+		Exercises\06.WorkingWithVariables.md = Exercises\06.WorkingWithVariables.md
+		Exercises\07.ImportCompletion.md = Exercises\07.ImportCompletion.md
+		Exercises\08.FindUsages.md = Exercises\08.FindUsages.md
+		Exercises\09.SolutionRefactorings.md = Exercises\09.SolutionRefactorings.md
+		Exercises\10.MoveCode.md = Exercises\10.MoveCode.md
+		Exercises\11.NavigateHierarchies.md = Exercises\11.NavigateHierarchies.md
+		Exercises\12.InspectThis.md = Exercises\12.InspectThis.md
+		Exercises\13.FirstExerciseRevisited.md = Exercises\13.FirstExerciseRevisited.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
