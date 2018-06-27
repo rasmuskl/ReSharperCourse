@@ -538,7 +538,7 @@
     <Content Include="Custom\Media\sample.flv" />
     <Content Include="Custom\Themes\Standard-2017\CommentForm.ascx" />
     <Content Include="Custom\Themes\Standard-2017\CommentView.ascx" />
-    <Content Include="Custom\Themes\Standard-2017\newsletter.html" />
+    <Content Include="Custom\Themes\Standard-2017\trewsletter.html" />
     <Content Include="Custom\Themes\Standard-2017\PostNavigation.ascx" />
     <Content Include="Custom\Themes\Standard-2017\PostView.ascx" />
     <Content Include="Custom\Themes\Standard-2017\RelatedPosts.ascx" />
