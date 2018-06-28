@@ -50,7 +50,7 @@ namespace BlogEngine.Core
         /// <param name="page">Page #</param>
         /// <param name="pageSize">Page size (number of items per page)</param>
         /// <param name="listCount">Number of items in the list</param>
-        public static void  Reset(int page, int pageSize, int listCount)
+        public static void Reset(int page, int pageSize, int listCount)
         {
             if (page < 1) page = 1;
             Total = listCount;
