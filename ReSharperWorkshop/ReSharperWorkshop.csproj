@@ -5,6 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Tennis.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="original.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Tennis\Tennis.cs" />
+    <Content Include="Tennis\original.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Basic\Basic.csproj" />
   </ItemGroup>
 

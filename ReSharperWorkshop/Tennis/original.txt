@@ -1,6 +1,6 @@
 using System;
 
-namespace Tennis
+namespace ReSharperWorkshop.Tennis
 {
     public abstract class GameStateBase : IGameState
     {
