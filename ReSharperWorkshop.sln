@@ -54,6 +54,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Basic", "Basic", "{3299EBA1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{018BDBB8-3A36-4E55-868C-A31C2A1D09D9}"
 	ProjectSection(SolutionItems) = preProject
+		Exercises_Manual.pdf = Exercises_Manual.pdf
 		README.md = README.md
 	EndProjectSection
 EndProject
