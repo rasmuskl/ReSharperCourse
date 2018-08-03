@@ -1,5 +1,7 @@
 # ReSharper Course Material
 
+**For an updated version of the course using dotnetcore, Visual Studio 2017 and ReSharper 2018 - please see [asos-alitoalvarez's fork](https://github.com/asos-alitoalvarez/ReSharperCourse).**
+
 This is my basic ReSharper (http://www.jetbrains.com/resharper/) course material developed in 2012 - based on ReSharper 6.1, although a lot of the material is still relevant. 
 
 It should provide enough content for 4 to 6 hours of entertainment. The course focuses on progressivly harder exercises and hands-on experience over a lot of talk.
