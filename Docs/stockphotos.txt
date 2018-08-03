@@ -1,6 +1,0 @@
-- Agenda
-- Surviving without mouse
-- Hands-on / team setup
-- Course form(?)
-- You - anonymous developer?
-- Keyboard schemes
