@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<blogRoll>
+    <item id="dcdaa78b-0b77-4691-99f0-1bb6418945a1" title="Ruslan Tur" description=".NET and Open Source: better together" htmlUrl="http://rtur.net/blog/" xmlUrl="http://feeds.feedburner.com/rtur" xfn="contact" sortIndex="2" />
+    <item id="973921aa-8909-40d9-a613-5752c3cdc5b7" title="Francis Bio" description="Front-End Developer" htmlUrl="http://francis.bio/" xmlUrl="https://francis.bio/feed.xml" xfn="contact" sortIndex="0" />
+    <item id="b42bda14-5633-4e73-afb8-7c6540e6e40a" title="BlogEngine" description="Open Source Blogging platform" htmlUrl="https://blogengine.io/" xmlUrl="https://blogengine.io/feed.xml" xfn="contact" sortIndex="0" />
+</blogRoll>
