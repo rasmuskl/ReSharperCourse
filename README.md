@@ -1,6 +1,6 @@
 # ReSharper Workshop
 
-This is an updated version of the ReSharper workshop authored by @rasmuskl, now fully updated to use dotnetcore, Visual Studio 2017 and ReSharper 8.
+This is an updated version of the ReSharper workshop authored by @rasmuskl, now fully updated to use dotnetcore, Visual Studio 2017 and ReSharper 2018.
 
 It should provide enough content for 4 to 6 hours of entertainment. The course focuses on progressivly harder exercises and hands-on experience over a lot of talk.
 
